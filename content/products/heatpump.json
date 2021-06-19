@@ -1,0 +1,18 @@
+{
+  "name": "Heat pump",
+  "maxSavings": "$2,000",
+  "headline": "Heat and cool your home for less",
+  "image": "heatpump.jpg",
+  "productInfo": "Heat pumps provide year-round comfort and save energy by moving heat in or out of your home based on the season. Because heat pumps move heat instead of generating it, these systems are highly efficient.",
+  "qualifications": [
+    "Date installed",
+    "Existing heating system fuel type",
+    "AHRI number",
+    "New heat pump manufacturer"
+  ],
+  "documents": [
+    "Photo of existing appliance being replaced",
+    "Photo of existing applianced",
+    "Photo of new appliance"
+  ]
+}

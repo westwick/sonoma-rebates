@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23.446" height="21.434" viewBox="0 0 23.446 21.434">
+  <g id="checkbox-icon" transform="translate(-123 -2154.566)">
+    <g id="Rectangle_1839" data-name="Rectangle 1839" transform="translate(123 2156)" fill="#fff" stroke="#95a2aa" stroke-width="0.5">
+      <rect width="20" height="20" rx="1" stroke="none"/>
+      <rect x="0.25" y="0.25" width="19.5" height="19.5" rx="0.75" fill="none"/>
+    </g>
+    <path id="noun_Check_3056932" d="M22.946,7.961c-5.787,3.645-11.414,10.532-11.414,10.532A45.123,45.123,0,0,0,7.9,15.108a1.761,1.761,0,0,0-2.52,2.431,45.335,45.335,0,0,1,4.7,7.54,1.736,1.736,0,0,0,3.09.035c3.6-6.77,6.716-10.566,11.055-15.687a.984.984,0,0,0-1.28-1.466Z" transform="translate(121.987 2146.76)" fill="#382658"/>
+  </g>
+</svg>
