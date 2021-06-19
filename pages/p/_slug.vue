@@ -83,11 +83,7 @@
 export default {
   async asyncData({ $content, params, error }) {
     const slug = params.slug
-    const page = await $content('products\\' + slug)
-      .fetch()
-      .catch((err) => {
-        error({ statusCode: 404, message: 'Page not found' })
-      })
+    const page = await $content('products/' + slug).fetch()
 
     return {
       page,
