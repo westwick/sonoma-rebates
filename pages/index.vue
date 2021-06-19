@@ -1,7 +1,6 @@
 <template>
   <div>
     <div>
-      <Banner />
       <div class="hero-home">
         <div class="container mx-auto">
           <div class="grid grid-cols-2">
@@ -30,12 +29,53 @@
                 contractor rebates for qualified products and services.
               </p>
             </div>
-            <div class="info-2"><h2>Applying is easy</h2></div>
+            <div class="info-2">
+              <h2>Applying is easy</h2>
+              <ol class="apply-steps">
+                <li>
+                  <span>1</span> Browse the qualified project types for rebate
+                  details.
+                </li>
+                <li>
+                  <span>2</span>
+                  Review the list of required documents and have them ready.
+                </li>
+                <li><span>3</span> Complete the online application form.</li>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
       <div class="get-started">
-        <p>GET STARTED</p>
+        <div class="container mx-auto">
+          <div class="flex flex-col content-center text-center">
+            <p class="text-ugray">GET STARTED</p>
+            <img src="~/assets/images/getstarted-icon.svg" />
+            <h2>Please choose your project type below</h2>
+          </div>
+        </div>
+      </div>
+      <div class="rebate-types">
+        <div class="container mx-auto rebate-types-container">
+          <div class="all-rebates">All Rebates</div>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="rebate-type">
+              <h2>Heat Pump</h2>
+              <p class="text-ugray">Save Up To $2,000</p>
+              <a href="#" class="button-cta">View Details</a>
+            </div>
+            <div class="rebate-type">
+              <h2>Heat Pump Water Heater</h2>
+              <p class="text-ugray">Save Up To $2,000</p>
+              <a href="#" class="button-cta">View Details</a>
+            </div>
+            <div class="rebate-type">
+              <h2>Induction Cooktop</h2>
+              <p class="text-ugray">Save Up To $300</p>
+              <a href="#" class="button-cta">View Details</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -73,6 +113,7 @@ h1 {
 h2 {
   font-size: 36px;
   font-weight: bold;
+  color: #382658;
 }
 .home-info {
   margin-top: -64px;
@@ -83,9 +124,11 @@ h2 {
 }
 .info-1 {
   background: #fff;
+  box-shadow: 0px -20px 40px #79aac429;
 }
 .info-1 h2 {
   color: #382658;
+  margin-bottom: 16px;
 }
 .info-1 p {
   font-size: 18px;
@@ -94,10 +137,73 @@ h2 {
   background: #382658;
   color: #fff;
 }
-.get-started p {
-  color: #8d969a;
-  font-size: 16px;
+.info-2 h2 {
+  color: #fff;
+}
+.apply-steps li {
+  margin-top: 32px;
+  font-size: 20px;
+}
+.apply-steps span {
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+
+  border-radius: 50%;
+  border: 1px solid #fff;
+  color: #fff;
   font-weight: bold;
+  margin-right: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.get-started {
+  padding: 96px 0 144px;
+}
+.get-started img {
+  width: 96px;
+  height: 96px;
+  margin: 32px auto;
+}
+.all-rebates {
+  width: 256px;
+  height: 96px;
+  border-bottom: 2px solid #382658;
+  background: #fff;
+  box-shadow: 0px 6px 20px #859daa29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4f5263;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 auto;
+  position: relative;
+  top: -48px;
+}
+.rebate-types {
+  margin-bottom: 208px;
+}
+.rebate-types-container {
+  background: url('~/assets/images/background-lines.png') no-repeat center
+    center;
+  background-size: cover;
+  padding: 0 16px;
+}
+.rebate-type {
+  text-align: center;
+  background: #fff;
+  padding: 24px 0;
+  margin: 128px 0;
+  box-shadow: 0px 0px 20px #8599aa80;
+}
+.rebate-type h2 {
+  font-size: 26px;
+}
+.rebate-type .text-ugray {
+  margin: 12px 0 16px;
 }
 /* Sample `apply` at-rules with Tailwind CSS
 .container {

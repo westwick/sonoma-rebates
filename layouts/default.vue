@@ -1,6 +1,9 @@
 <template>
   <div>
+    <Banner />
+    <Header />
     <Nuxt />
+    <Footer />
   </div>
 </template>
 
@@ -23,11 +26,24 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+a.link {
+  color: #00b9d4;
+  transition: color 0.3s ease-in-out;
+}
+a.link:hover {
+  color: #06a3bb;
+}
+.text-ugray {
+  color: #8d969a;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 .button-cta {
   text-transform: uppercase;
   border: 2px solid rgba(223, 224, 84, 1);
   border-radius: 31px;
-  padding: 16px 48px;
+  padding: 12px 48px;
   display: inline-block;
   background: transparent;
   font-weight: bold;
@@ -35,5 +51,8 @@ html {
 }
 .button-cta:hover {
   background: rgba(223, 224, 84, 1);
+}
+.text-purp {
+  color: #382658;
 }
 </style>
