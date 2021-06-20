@@ -4,7 +4,7 @@
       <div class="apply-hero-container">
         <div class="container mx-auto">
           <div class="apply-hero-info">
-            <p class="text-rebates">Part 1 of 3</p>
+            <p class="text-rebates">Part {{ step }} of 3</p>
             <p class="text-apply">Apply for a Rebate</p>
           </div>
         </div>
@@ -24,9 +24,24 @@
                 <span class="text-red-500">*</span> Required fields
               </p>
               <div class="tabs-group mb-8">
-                <span class="tab tab-active">Customer Details</span>
-                <span class="tab">Rebate Details</span>
-                <span class="tab">Sign &amp; Submit</span>
+                <span
+                  class="tab"
+                  :class="{ 'tab-active': step === 1 }"
+                  @click="setStep(1)"
+                  >Customer Details</span
+                >
+                <span
+                  class="tab"
+                  :class="{ 'tab-active': step === 2 }"
+                  @click="setStep(2)"
+                  >Rebate Details</span
+                >
+                <span
+                  class="tab"
+                  :class="{ 'tab-active': step === 3 }"
+                  @click="setStep(3)"
+                  >Sign &amp; Submit</span
+                >
               </div>
               <div class="mainform">
                 <form
@@ -36,230 +51,39 @@
                   id="mainform"
                   data-netlify="true"
                 >
-                  <input type="hidden" name="form-name" value="mainform" />
-                  <div class="customer-details">
-                    <div class="bg-gray-100 p-8">
-                      <p class="form-section-name">Account Information</p>
-                      <div class="grid grid-cols-2 gap-x-8">
-                        <div>
-                          <div
-                            class="form-group"
-                            :class="{
-                              'form-group--error':
-                                $v.account.pgeAccountNum.$error,
-                            }"
-                          >
-                            <label class="form__label"
-                              >PG&amp;E Account #<span class="r">*</span></label
-                            >
-                            <input
-                              class="form__input"
-                              type="text"
-                              name="account.pgeAccountNum"
-                              v-model="$v.account.pgeAccountNum.$model"
-                            />
-                          </div>
-                          <div
-                            class="error"
-                            v-if="
-                              $v.account.pgeAccountNum.$error &&
-                              !$v.account.pgeAccountNum.required
-                            "
-                          >
-                            * Required
-                          </div>
-
-                          <div
-                            class="form-group"
-                            :class="{
-                              'form-group--error': $v.account.pgeGasSAID.$error,
-                            }"
-                          >
-                            <label class="form__label"
-                              >PG&amp;E Gas SAID<span class="r">*</span></label
-                            >
-                            <input
-                              class="form__input"
-                              type="text"
-                              name="account.pgeGasSAID"
-                              v-model="$v.account.pgeGasSAID.$model"
-                            />
-                          </div>
-                          <div
-                            class="error"
-                            v-if="
-                              $v.account.pgeGasSAID.$error &&
-                              !$v.account.pgeGasSAID.required
-                            "
-                          >
-                            * Required
-                          </div>
-
-                          <div
-                            class="form-group"
-                            :class="{
-                              'form-group--error':
-                                $v.account.customerPhone.$error,
-                            }"
-                          >
-                            <label class="form__label"
-                              >Customer Phone Number<span class="r"
-                                >*</span
-                              ></label
-                            >
-                            <input
-                              class="form__input"
-                              type="text"
-                              name="account.customerPhone"
-                              v-model="$v.account.customerPhone.$model"
-                            />
-                          </div>
-                          <div
-                            class="error"
-                            v-if="
-                              $v.account.customerPhone.$error &&
-                              !$v.account.customerPhone.required
-                            "
-                          >
-                            * Required
-                          </div>
-
-                          <div
-                            class="form-group"
-                            :class="{
-                              'form-group--error': $v.account.language.$error,
-                            }"
-                          >
-                            <label class="form__label"
-                              >Primary Language<span class="r">*</span></label
-                            >
-                            <select
-                              class="form__input"
-                              name="account.language"
-                              v-model="$v.account.language.$model"
-                              required
-                            >
-                              <option value="" default selected hidden>
-                                Select Any
-                              </option>
-                              <option value="english">English</option>
-                            </select>
-                          </div>
-                          <div
-                            class="error"
-                            v-if="
-                              $v.account.language.$error &&
-                              !$v.account.language.required
-                            "
-                          >
-                            * Required
-                          </div>
-                        </div>
-                        <div>
-                          <div
-                            class="form-group"
-                            :class="{
-                              'form-group--error':
-                                $v.account.customerName.$error,
-                            }"
-                          >
-                            <label class="form__label"
-                              >Customer Name On Utility Account<span class="r"
-                                >*</span
-                              ></label
-                            >
-                            <input
-                              class="form__input"
-                              type="text"
-                              name="account.customerName"
-                              v-model="$v.account.customerName.$model"
-                            />
-                          </div>
-                          <div
-                            class="error"
-                            v-if="
-                              $v.account.customerName.$error &&
-                              !$v.account.customerName.required
-                            "
-                          >
-                            * Required
-                          </div>
-                          <div
-                            class="form-group"
-                            :class="{
-                              'form-group--error':
-                                $v.account.pgeElectricSAID.$error,
-                            }"
-                          >
-                            <label class="form__label"
-                              >PG&amp;E Electric SAID<span class="r"
-                                >*</span
-                              ></label
-                            >
-                            <input
-                              class="form__input"
-                              type="text"
-                              name="account.pgeElectricSAID"
-                              v-model="$v.account.pgeElectricSAID.$model"
-                            />
-                          </div>
-                          <div
-                            class="error"
-                            v-if="
-                              $v.account.pgeElectricSAID.$error &&
-                              !$v.account.pgeElectricSAID.required
-                            "
-                          >
-                            * Required
-                          </div>
-                          <div
-                            class="form-group"
-                            :class="{
-                              'form-group--error':
-                                $v.account.customerEmail.$error,
-                            }"
-                          >
-                            <label class="form__label"
-                              >Customer Email Address<span class="r"
-                                >*</span
-                              ></label
-                            >
-                            <input
-                              class="form__input"
-                              type="text"
-                              name="account.customerEmail"
-                              v-model="$v.account.customerEmail.$model"
-                            />
-                          </div>
-                          <div
-                            class="error"
-                            v-if="
-                              $v.account.customerEmail.$error &&
-                              !$v.account.customerEmail.required
-                            "
-                          >
-                            * Required
-                          </div>
-                          <div class="form-group">
-                            <label class="form__label"
-                              >Household Gross Annual Income</label
-                            >
-                            <select
-                              name="account.householdGrossIncome"
-                              class="form__input"
-                              v-model="account.householdGrossIncome"
-                            >
-                              <option value="" default selected hidden>
-                                Select Any
-                              </option>
-                              <option value="100k">$100K+</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div v-if="step === 1">
+                    <FormsCustomerDetails
+                      :account="account"
+                      :validator="$v"
+                      class="mb-8"
+                    />
+                    <FormsMailingAddress
+                      :mailingAddress="mailingAddress"
+                      :validator="$v"
+                      class="mb-8"
+                    />
+                    <FormsServiceAddress
+                      :serviceAddress="serviceAddress"
+                      :validator="$v"
+                      class="mb-8"
+                    />
+                    <FormsProperty :property="property" :validator="$v" />
+                    <button
+                      class="button-cta mx-auto mt-8 mb-8"
+                      @click="setStep(2)"
+                    >
+                      Continue
+                    </button>
+                  </div>
+                  <div v-if="step === 2">
+                    <h1>Products TBD</h1>
+                  </div>
+                  <div v-if="step === 3">
+                    <h1>Sign</h1>
                   </div>
                 </form>
+
+                <p>dev</p>
                 <button @click="handleSubmit()">Submit AJAX</button>
               </div>
             </div>
@@ -282,6 +106,7 @@ import { required } from 'vuelidate/lib/validators'
 export default {
   data() {
     return {
+      step: 1,
       account: {
         pgeAccountNum: '',
         customerName: '',
@@ -291,6 +116,29 @@ export default {
         customerEmail: '',
         language: '',
         householdGrossIncome: '',
+      },
+      mailingAddress: {
+        street: '',
+        city: '',
+        state: '',
+        zip: '',
+        installingContractor: '',
+        rebatePayee: '',
+        whereToSend: '',
+      },
+      serviceAddress: {
+        sameAsMailing: false,
+        street: '',
+        city: '',
+        state: '',
+        zip: '',
+      },
+      property: {
+        yearBuilt: '',
+        preProjectArea: '',
+        postProjectArea: '',
+        electricPanelUpgraded: '',
+        otherElectricUpgrades: '',
       },
     }
   },
@@ -304,19 +152,57 @@ export default {
       customerEmail: { required },
       language: { required },
     },
+    mailingAddress: {
+      street: { required },
+      city: { required },
+      state: { required },
+      zip: { required },
+      installingContractor: { required },
+      rebatePayee: { required },
+      whereToSend: { required },
+    },
+    serviceAddress: {
+      street: { required },
+      city: { required },
+      state: { required },
+      zip: { required },
+    },
+    property: {
+      yearBuilt: { required },
+      preProjectArea: { required },
+      postProjectArea: { required },
+      electricPanelUpgraded: { required },
+      otherElectricUpgrades: { required },
+    },
   },
   methods: {
+    setStep(newStep) {
+      this.step = newStep
+    },
     handleSubmit() {
       this.$v.$touch()
       if (this.$v.$invalid) {
         alert('form incomplete')
       } else {
-        let myForm = document.getElementById('mainform')
-        let formData = new FormData(myForm)
+        let formData = new FormData()
+        formData.append('form-name', 'ajaxform')
+        for (var key in this.account) {
+          formData.append(`account.${key}`, this.account[key])
+        }
+        for (var key in this.mailingAddress) {
+          formData.append(`mailingAddress.${key}`, this.account[key])
+        }
+        for (var key in this.serviceAddress) {
+          formData.append(`serviceAddress.${key}`, this.account[key])
+        }
+        for (var key in this.property) {
+          formData.append(`property.${key}`, this.account[key])
+        }
+        let postbody = new URLSearchParams(formData).toString()
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString(),
+          body: postbody,
         })
           .then(() => console.log('Form successfully submitted'))
           .catch((error) => alert(error))
@@ -356,6 +242,7 @@ export default {
 }
 .notice {
   padding: 40px;
+  max-height: 100vh;
 }
 .text-notice {
   color: #4f5263;
@@ -374,7 +261,6 @@ export default {
   color: rgba(79, 82, 99, 1);
   font-weight: bold;
   font-size: 20px;
-  margin-bottom: 40px;
 }
 
 label {
@@ -415,5 +301,9 @@ span.r,
 .form-group--error input,
 .form-group--eror select {
   border-color: rgb(239, 68, 68);
+}
+.label-hint {
+  font-size: 15px;
+  color: #777;
 }
 </style>
