@@ -53,6 +53,7 @@
                             <input
                               class="form__input"
                               type="text"
+                              name="pgeAccountNum"
                               v-model="$v.account.pgeAccountNum.$model"
                             />
                           </div>
@@ -250,8 +251,9 @@
                       </div>
                     </div>
                   </div>
+                  <input type="submit" value="Submit Normal" />
                 </form>
-                <button @click="handleSubmit()">Submit</button>
+                <button @click="handleSubmit()">Submit AJAX</button>
               </div>
             </div>
             <div class="bg-gray-100 notice">
@@ -304,7 +306,7 @@ export default {
       } else {
         let myForm = document.getElementById('mainform')
         let formData = new FormData(myForm)
-        fetch('/', {
+        fetch('/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(formData).toString(),
