@@ -29,7 +29,13 @@
                 <span class="tab">Sign &amp; Submit</span>
               </div>
               <div class="mainform">
-                <form name="test" id="mainform" data-netlify="true">
+                <form
+                  method="POST"
+                  action="/submit"
+                  name="test"
+                  id="mainform"
+                  data-netlify="true"
+                >
                   <input
                     type="hidden"
                     name="form-name"
