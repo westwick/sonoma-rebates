@@ -32,15 +32,11 @@
                 <form
                   method="POST"
                   action="/submit"
-                  name="test"
+                  name="test1"
                   id="mainform"
                   data-netlify="true"
                 >
-                  <input
-                    type="hidden"
-                    name="form-name"
-                    value="name_of_my_form"
-                  />
+                  <input type="hidden" name="form-name" value="test1" />
                   <div class="customer-details">
                     <div class="bg-gray-100 p-8">
                       <p class="form-section-name">Account Information</p>
@@ -85,6 +81,7 @@
                             <input
                               class="form__input"
                               type="text"
+                              name="pgeGasSAID"
                               v-model="$v.account.pgeGasSAID.$model"
                             />
                           </div>
