@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-metropolis">
     <Banner />
     <Header />
     <Nuxt />

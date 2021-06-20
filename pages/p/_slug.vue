@@ -37,7 +37,7 @@
               <p class="mb-8">Have the required documents ready.</p>
               <p class="font-bold">Step 3</p>
               <p class="mb-8">Complete the online application form.</p>
-              <a href="#" class="button-cta">Apply Now</a>
+              <NuxtLink to="/apply" class="button-cta">Apply Now</NuxtLink>
             </div>
           </div>
         </div>
@@ -45,14 +45,21 @@
     </div>
     <div class="product-tabs">
       <div class="product-tabs-container container mx-auto">
-        <div
-          class="product-tab product-qualifications"
-          @click="setTab('qualifications')"
-        >
-          Qualifications
-        </div>
-        <div class="product-tab product-documents" @click="setTab('documents')">
-          Documents
+        <div class="tabs-group">
+          <span
+            class="tab product-tab product-qualifications"
+            :class="{ 'tab-active': tab1active }"
+            @click="setTab('qualifications')"
+          >
+            Qualifications
+          </span>
+          <span
+            class="tab product-tab product-documents"
+            :class="{ 'tab-active': !tab1active }"
+            @click="setTab('documents')"
+          >
+            Documents
+          </span>
         </div>
         <div
           class="product-qualifications-text"
@@ -94,6 +101,11 @@ export default {
       tab: 'qualifications',
     }
   },
+  computed: {
+    tab1active: function () {
+      return this.tab === 'qualifications'
+    },
+  },
   methods: {
     setTab(tab) {
       this.tab = tab
@@ -103,6 +115,11 @@ export default {
 </script>
 
 <style>
+@import url('~/assets/css/tabs.css');
+.tabs-group {
+  margin-bottom: 48px;
+}
+
 .product-hero-info-container {
   background: #382658;
   color: #fff;

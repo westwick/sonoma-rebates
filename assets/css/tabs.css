@@ -1,0 +1,28 @@
+.tabs-group {
+  display: flex;
+}
+.tab {
+  color: rgba(79, 82, 99, 0.5);
+  background: #f8f9fa;
+  width: 256px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid #f8f9fa;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.tab:hover {
+  color: rgba(79, 82, 99, 0.75);
+}
+.tab.tab-active {
+  cursor: default;
+  background: #fff;
+  color: rgba(79, 82, 99, 1);
+  border: 1px solid #ddeaf0;
+  border-bottom: 2px solid rgba(56, 38, 88, 1);
+  box-shadow: 0px 6px 20px rgba(133, 157, 170, 0.16);
+}
