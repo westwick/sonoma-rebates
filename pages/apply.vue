@@ -47,7 +47,7 @@
                 <form
                   method="POST"
                   action="/submit"
-                  name="mainform"
+                  name="ajaxform"
                   id="mainform"
                   data-netlify="true"
                 >
@@ -108,37 +108,37 @@ export default {
     return {
       step: 1,
       account: {
-        pgeAccountNum: '',
-        customerName: '',
-        pgeGasSAID: '',
-        pgeElectricSAID: '',
-        customerPhone: '',
-        customerEmail: '',
-        language: '',
-        householdGrossIncome: '',
+        pgeAccountNum: '1234',
+        customerName: 'Andrew Westwick',
+        pgeGasSAID: 'said what',
+        pgeElectricSAID: 'said who',
+        customerPhone: '800 no way',
+        customerEmail: 'wtfx@heh.com',
+        language: 'english',
+        householdGrossIncome: '100k',
       },
       mailingAddress: {
-        street: '',
-        city: '',
-        state: '',
-        zip: '',
-        installingContractor: '',
-        rebatePayee: '',
-        whereToSend: '',
+        street: '123 fake st',
+        city: 'los angels',
+        state: 'ca',
+        zip: '10090',
+        installingContractor: 'me',
+        rebatePayee: 'me, of course!',
+        whereToSend: 'to mee...?',
       },
       serviceAddress: {
         sameAsMailing: false,
-        street: '',
-        city: '',
-        state: '',
-        zip: '',
+        street: '123 fake st',
+        city: 'los angels',
+        state: 'ca',
+        zip: '10090',
       },
       property: {
-        yearBuilt: '',
-        preProjectArea: '',
-        postProjectArea: '',
-        electricPanelUpgraded: '',
-        otherElectricUpgrades: '',
+        yearBuilt: '1789',
+        preProjectArea: '200',
+        postProjectArea: '20,000',
+        electricPanelUpgraded: 'nope',
+        otherElectricUpgrades: 'nope again sir',
       },
     }
   },
@@ -190,13 +190,13 @@ export default {
           formData.append(`account.${key}`, this.account[key])
         }
         for (var key in this.mailingAddress) {
-          formData.append(`mailingAddress.${key}`, this.account[key])
+          formData.append(`mailingAddress.${key}`, this.mailingAddress[key])
         }
         for (var key in this.serviceAddress) {
-          formData.append(`serviceAddress.${key}`, this.account[key])
+          formData.append(`serviceAddress.${key}`, this.serviceAddress[key])
         }
         for (var key in this.property) {
-          formData.append(`property.${key}`, this.account[key])
+          formData.append(`property.${key}`, this.property[key])
         }
         let postbody = new URLSearchParams(formData).toString()
         fetch('/', {
