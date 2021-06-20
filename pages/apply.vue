@@ -32,11 +32,11 @@
                 <form
                   method="POST"
                   action="/submit"
-                  name="test1"
+                  name="mainform"
                   id="mainform"
                   data-netlify="true"
                 >
-                  <input type="hidden" name="form-name" value="test1" />
+                  <input type="hidden" name="form-name" value="mainform" />
                   <div class="customer-details">
                     <div class="bg-gray-100 p-8">
                       <p class="form-section-name">Account Information</p>
@@ -55,7 +55,7 @@
                             <input
                               class="form__input"
                               type="text"
-                              name="pgeAccountNum"
+                              name="account.pgeAccountNum"
                               v-model="$v.account.pgeAccountNum.$model"
                             />
                           </div>
@@ -81,7 +81,7 @@
                             <input
                               class="form__input"
                               type="text"
-                              name="pgeGasSAID"
+                              name="account.pgeGasSAID"
                               v-model="$v.account.pgeGasSAID.$model"
                             />
                           </div>
@@ -110,6 +110,7 @@
                             <input
                               class="form__input"
                               type="text"
+                              name="account.customerPhone"
                               v-model="$v.account.customerPhone.$model"
                             />
                           </div>
@@ -134,6 +135,7 @@
                             >
                             <select
                               class="form__input"
+                              name="account.language"
                               v-model="$v.account.language.$model"
                               required
                             >
@@ -169,6 +171,7 @@
                             <input
                               class="form__input"
                               type="text"
+                              name="account.customerName"
                               v-model="$v.account.customerName.$model"
                             />
                           </div>
@@ -196,6 +199,7 @@
                             <input
                               class="form__input"
                               type="text"
+                              name="account.pgeElectricSAID"
                               v-model="$v.account.pgeElectricSAID.$model"
                             />
                           </div>
@@ -223,6 +227,7 @@
                             <input
                               class="form__input"
                               type="text"
+                              name="account.customerEmail"
                               v-model="$v.account.customerEmail.$model"
                             />
                           </div>
@@ -240,7 +245,7 @@
                               >Household Gross Annual Income</label
                             >
                             <select
-                              name="householdGrossIncome"
+                              name="account.householdGrossIncome"
                               class="form__input"
                               v-model="account.householdGrossIncome"
                             >
@@ -254,7 +259,6 @@
                       </div>
                     </div>
                   </div>
-                  <input type="submit" value="Submit Normal" />
                 </form>
                 <button @click="handleSubmit()">Submit AJAX</button>
               </div>
@@ -309,7 +313,7 @@ export default {
       } else {
         let myForm = document.getElementById('mainform')
         let formData = new FormData(myForm)
-        fetch('/submit', {
+        fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(formData).toString(),
