@@ -30,6 +30,11 @@
               </div>
               <div class="mainform">
                 <form name="test" id="mainform" data-netlify="true">
+                  <input
+                    type="hidden"
+                    name="form-name"
+                    value="name_of_my_form"
+                  />
                   <div class="customer-details">
                     <div class="bg-gray-100 p-8">
                       <p class="form-section-name">Account Information</p>
