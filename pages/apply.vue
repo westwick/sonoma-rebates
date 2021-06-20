@@ -29,7 +29,7 @@
                 <span class="tab">Sign &amp; Submit</span>
               </div>
               <div class="mainform">
-                <form name="test" id="mainform">
+                <form name="test" id="mainform" data-netlify="true">
                   <div class="customer-details">
                     <div class="bg-gray-100 p-8">
                       <p class="form-section-name">Account Information</p>
