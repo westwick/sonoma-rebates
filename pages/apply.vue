@@ -418,18 +418,18 @@ export default {
       } else {
         let formData = new FormData()
         formData.append('form-name', 'ajaxform')
-        for (var key in this.account) {
-          formData.append(`account.${key}`, this.account[key])
-        }
-        for (var key in this.mailingAddress) {
-          formData.append(`mailingAddress.${key}`, this.mailingAddress[key])
-        }
-        for (var key in this.serviceAddress) {
-          formData.append(`serviceAddress.${key}`, this.serviceAddress[key])
-        }
-        for (var key in this.property) {
-          formData.append(`property.${key}`, this.property[key])
-        }
+        // for (var key in this.account) {
+        //   formData.append(`account.${key}`, this.account[key])
+        // }
+        // for (var key in this.mailingAddress) {
+        //   formData.append(`mailingAddress.${key}`, this.mailingAddress[key])
+        // }
+        // for (var key in this.serviceAddress) {
+        //   formData.append(`serviceAddress.${key}`, this.serviceAddress[key])
+        // }
+        // for (var key in this.property) {
+        //   formData.append(`property.${key}`, this.property[key])
+        // }
         if (this.heatpumpSelected) {
           for (var key in this.heatpump) {
             formData.append(`heatpump.${key}`, this.heatpump[key])
