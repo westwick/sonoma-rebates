@@ -1,0 +1,18 @@
+{
+  "name": "Heat pump water heater",
+  "maxSavings": "$2,000",
+  "headline": "Reliable hot water for happy homes",
+  "image": "hpwh.jpg",
+  "productInfo": "Heat pump water heaters save energy and money by pulling heat from the surrounding air. You’ll save with every shower, each load of laundry, and when you do the dishes. And because they use electricity that’s cleaner than gas, you can enjoy a healthier home, too.",
+  "qualifications": [
+    "Date installed",
+    "Existing heating system fuel type",
+    "AHRI number",
+    "New heat pump manufacturer"
+  ],
+  "documents": [
+    "Photo of existing appliance being replaced",
+    "Photo of existing applianced",
+    "Photo of new appliance"
+  ]
+}

@@ -11,7 +11,7 @@
                 energy-efficient solutions that help you save money and live
                 comfortably.
               </p>
-              <a href="#" class="button-cta">Get Started</a>
+              <NuxtLink to="/apply" class="button-cta">Get Started</NuxtLink>
             </div>
           </div>
         </div>
@@ -62,19 +62,23 @@
             <div class="rebate-type">
               <h2>Heat Pump</h2>
               <p class="text-ugray">Save Up To $2,000</p>
-              <NuxtLink to="/p/heatpump" class="button-cta"
+              <NuxtLink to="/rebates/heat-pump" class="button-cta"
                 >View Details</NuxtLink
               >
             </div>
             <div class="rebate-type">
               <h2>Heat Pump Water Heater</h2>
               <p class="text-ugray">Save Up To $2,000</p>
-              <a href="#" class="button-cta">View Details</a>
+              <NuxtLink to="/rebates/heat-pump-water-heater" class="button-cta"
+                >View Details</NuxtLink
+              >
             </div>
             <div class="rebate-type">
               <h2>Induction Cooktop</h2>
               <p class="text-ugray">Save Up To $300</p>
-              <a href="#" class="button-cta">View Details</a>
+              <NuxtLink to="/rebates/induction-cooktop" class="button-cta"
+                >View Details</NuxtLink
+              >
             </div>
           </div>
         </div>

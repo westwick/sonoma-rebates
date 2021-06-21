@@ -3,10 +3,24 @@
     <div class="container mx-auto">
       <header>
         <div class="logo">
-          <img src="~/assets/images/logo.svg" />
+          <NuxtLink to="/"><img src="~/assets/images/logo.svg" /></NuxtLink>
         </div>
         <div class="header-right">
-          <a href="#" class="button-cta text-purp">Get Started</a>
+          <div class="rebates-dropdown" @click="toggleDropdown()">
+            Rebates <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="rebates-dropdown-links" v-if="showDropdown">
+            <NuxtLink to="/rebates/heat-pump">Heat Pump</NuxtLink>
+            <NuxtLink to="/rebates/heat-pump-water-heater"
+              >Heat Pump Water Heater</NuxtLink
+            >
+            <NuxtLink to="/rebates/induction-cooktop"
+              >Induction Cooktop</NuxtLink
+            >
+          </div>
+          <NuxtLink to="/apply" class="button-cta text-purp"
+            >Get Started</NuxtLink
+          >
         </div>
       </header>
     </div>
@@ -14,7 +28,23 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      showDropdown: false,
+    }
+  },
+  methods: {
+    toggleDropdown() {
+      this.showDropdown = !this.showDropdown
+    },
+  },
+  watch: {
+    $route() {
+      this.showDropdown = false
+    },
+  },
+}
 </script>
 
 <style>
@@ -25,5 +55,47 @@ header {
 }
 .logo img {
   margin: 24px 0;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.rebates-dropdown {
+  color: rgba(79, 82, 99, 0.8);
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 48px;
+  cursor: pointer;
+}
+.rebates-dropdown:hover {
+  color: rgba(79, 82, 99, 1);
+}
+
+.rebates-dropdown i {
+  color: rgba(223, 224, 84, 1);
+  font-size: 20px;
+}
+
+.rebates-dropdown-links {
+  position: absolute;
+  left: 0;
+  top: 64px;
+  background: #fff;
+  width: 400px;
+  border-top: 3px solid rgba(79, 82, 99, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.rebates-dropdown-links a {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.rebates-dropdown-links a:last-child {
+  margin-bottom: 0;
 }
 </style>

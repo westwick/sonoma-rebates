@@ -76,15 +76,123 @@
                     </button>
                   </div>
                   <div v-if="step === 2">
-                    <h1>Products TBD</h1>
+                    <div class="bg-gray-100 p-8">
+                      <p class="form-section-name mb-4">Products</p>
+                      <p class="font-lg mb-4">
+                        Select the product(s) you are submitting as part of your
+                        application.
+                      </p>
+                      <div class="rebate-selections">
+                        <div
+                          class="product-type mb-2"
+                          :class="{ 'product-selected': heatpumpSelected }"
+                        >
+                          <div class="checkbox-wrap">
+                            <input
+                              type="checkbox"
+                              name="heatpump"
+                              id="heatpump"
+                              v-model="heatpumpSelected"
+                            />
+                            <label for="heatpump">Heat pump</label>
+                          </div>
+                          <div
+                            v-if="heatpumpSelected"
+                            class="product-wrap mt-8"
+                          >
+                            <FormsProductHeatpump
+                              :heatpump="heatpump"
+                              :validator="$v"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="product-type mb-2"
+                          :class="{
+                            'product-selected': heatpumpwaterheaterSelected,
+                          }"
+                        >
+                          <input
+                            type="checkbox"
+                            name="heatpumpwaterheater"
+                            id="heatpumpwaterheater"
+                            v-model="heatpumpwaterheaterSelected"
+                          />
+                          <label for="heatpumpwaterheater"
+                            >Heat pump water heater</label
+                          >
+                        </div>
+                        <div
+                          class="product-type"
+                          :class="{
+                            'product-selected': inductioncooktopSelected,
+                          }"
+                        >
+                          <input
+                            type="checkbox"
+                            name="inductioncooktop"
+                            id="inductioncooktop"
+                            v-model="inductioncooktopSelected"
+                          />
+                          <label for="inductioncooktop"
+                            >Induction cooktop</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-gray-100 p-8 mt-8">
+                      <p class="form-section-name mb-4">Supporting Documents</p>
+                      <p class="font-lg mb-4">Please upload the following:</p>
+                    </div>
                   </div>
                   <div v-if="step === 3">
-                    <h1>Sign</h1>
+                    <div class="bg-gray-100 p-8">
+                      <p class="form-section-name mb-8">Signature</p>
+                      <p class="font-xl mb-4">
+                        This Residential Rebate Application cannot be processed
+                        unless all of the appropriate fields on this application
+                        are complete. Please be sure you have read the Terms and
+                        Conditions of this application.
+                      </p>
+                      <p class="font-xl mb-4">
+                        I have read and understand the terms and conditions. I
+                        certify that the information I have provided is true and
+                        correct and the product(s) and/or equipment for which I
+                        am requesting a rebate meets the requirements in this
+                        application.
+                      </p>
+                      <p class="font-xl mb-4">
+                        Please type your name to provide your signature below.
+                      </p>
+                      <div
+                        class="form-group"
+                        :class="{
+                          'form-group--error': $v.signature.$error,
+                        }"
+                      >
+                        <input
+                          class="form__input"
+                          type="text"
+                          name="mailingAddress.street"
+                          v-model="$v.signature.$model"
+                        />
+                      </div>
+                      <div
+                        class="error"
+                        v-if="$v.signature.$error && !$v.signature.required"
+                      >
+                        * Required
+                      </div>
+                      <div class="signature">{{ signature }}</div>
+                    </div>
+                    <button
+                      class="button-cta mt-8"
+                      @click.prevent="handleSubmit()"
+                    >
+                      Submit
+                    </button>
                   </div>
                 </form>
-
-                <p>dev</p>
-                <button @click="handleSubmit()">Submit AJAX</button>
               </div>
             </div>
             <div class="bg-gray-100 notice">
@@ -107,6 +215,9 @@ export default {
   data() {
     return {
       step: 1,
+      heatpumpSelected: false,
+      heatpumpwaterheaterSelected: false,
+      inductioncooktopSelected: false,
       account: {
         pgeAccountNum: '',
         customerName: '',
@@ -140,6 +251,23 @@ export default {
         electricPanelUpgraded: '',
         otherElectricUpgrades: '',
       },
+      heatpump: {
+        dateInstalled: '',
+        existingFuelType: '',
+        ahriNumber: '',
+        newHpManufacturer: '',
+        newHpModel: '',
+        serial: '',
+        hpUnitsInstalled: '',
+        hspfRating: '',
+        seerRating: '',
+        measureCostToCustomer: '',
+        existingHeatType: '',
+        existingHeatSize: '',
+        newPumpType: '',
+        newPumpSize: '',
+      },
+      signature: '',
     }
   },
   validations: {
@@ -174,10 +302,31 @@ export default {
       electricPanelUpgraded: { required },
       otherElectricUpgrades: { required },
     },
+    heatpump: {
+      dateInstalled: { required },
+      existingFuelType: { required },
+      ahriNumber: { required },
+      newHpManufacturer: { required },
+      newHpModel: { required },
+      serial: { required },
+      hpUnitsInstalled: { required },
+      hspfRating: { required },
+      seerRating: { required },
+      measureCostToCustomer: { required },
+      existingHeatType: { required },
+      existingHeatSize: { required },
+      newPumpType: { required },
+      newPumpSize: { required },
+    },
+    signature: { required },
   },
   methods: {
     setStep(newStep) {
       this.step = newStep
+      // const tabs = document.querySelector('.tabs-group')
+      // const viewport = tabs.getBoundingClientRect()
+      // const top = viewport.top + document.documentElement.scrollTop
+      // window.scrollTo(0, top)
     },
     handleSubmit() {
       this.$v.$touch()
@@ -305,5 +454,30 @@ span.r,
 .label-hint {
   font-size: 15px;
   color: #777;
+}
+.signature {
+  font-family: cursive;
+  font-size: 24px;
+}
+.checkbox-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.checkbox-wrap label {
+  margin: 0 0 0 16px;
+  cursor: pointer;
+}
+.product-type {
+  border: 1px solid rgba(99, 131, 188, 1);
+  padding: 16px;
+}
+.product-type.product-selected {
+  background: #fff;
+  border-color: rgba(0, 117, 253, 1);
+}
+
+input[type='checkbox'] {
+  border-radius: 3px;
 }
 </style>
