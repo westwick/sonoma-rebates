@@ -97,12 +97,14 @@
             <label class="form__label"
               >Was the electric panel upgraded?<span class="r">*</span></label
             >
-            <input
-              class="form__input"
-              type="text"
-              name="property.electricPanelUpgraded"
+            <select
               v-model="validator.property.electricPanelUpgraded.$model"
-            />
+              required
+            >
+              <option value="" default selected hidden>Select Any</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
           </div>
           <div
             class="error"
@@ -126,12 +128,14 @@
             >*</span
           ></label
         >
-        <input
-          class="form__input"
-          type="text"
-          name="property.otherElectricUpgrades"
+        <select
           v-model="validator.property.otherElectricUpgrades.$model"
-        />
+          required
+        >
+          <option value="" default selected hidden>Select Any</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
       </div>
       <div
         class="error"

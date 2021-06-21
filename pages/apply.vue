@@ -112,15 +112,26 @@
                             'product-selected': heatpumpwaterheaterSelected,
                           }"
                         >
-                          <input
-                            type="checkbox"
-                            name="heatpumpwaterheater"
-                            id="heatpumpwaterheater"
-                            v-model="heatpumpwaterheaterSelected"
-                          />
-                          <label for="heatpumpwaterheater"
-                            >Heat pump water heater</label
+                          <div class="checkbox-wrap">
+                            <input
+                              type="checkbox"
+                              name="heatpumpwaterheater"
+                              id="heatpumpwaterheater"
+                              v-model="heatpumpwaterheaterSelected"
+                            />
+                            <label for="heatpumpwaterheater"
+                              >Heat pump water heater</label
+                            >
+                          </div>
+                          <div
+                            v-if="heatpumpwaterheaterSelected"
+                            class="product-wrap mt-8"
                           >
+                            <FormsProductHeatpumpwaterheater
+                              :heatpumpwaterheater="heatpumpwaterheater"
+                              :validator="$v"
+                            />
+                          </div>
                         </div>
                         <div
                           class="product-type"
@@ -128,15 +139,26 @@
                             'product-selected': inductioncooktopSelected,
                           }"
                         >
-                          <input
-                            type="checkbox"
-                            name="inductioncooktop"
-                            id="inductioncooktop"
-                            v-model="inductioncooktopSelected"
-                          />
-                          <label for="inductioncooktop"
-                            >Induction cooktop</label
+                          <div class="checkbox-wrap">
+                            <input
+                              type="checkbox"
+                              name="inductioncooktop"
+                              id="inductioncooktop"
+                              v-model="inductioncooktopSelected"
+                            />
+                            <label for="inductioncooktop"
+                              >Induction cooktop</label
+                            >
+                          </div>
+                          <div
+                            v-if="inductioncooktopSelected"
+                            class="product-wrap mt-8"
                           >
+                            <FormsProductInductionCooktop
+                              :inductioncooktop="inductioncooktop"
+                              :validator="$v"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -264,69 +286,127 @@ export default {
         measureCostToCustomer: '',
         existingHeatType: '',
         existingHeatSize: '',
+        existingCoolingType: '',
+        existingCoolingSize: '',
         newPumpType: '',
         newPumpSize: '',
+      },
+      heatpumpwaterheater: {
+        dateInstalled: '',
+        existingWaterHeaterFuelType: '',
+        newHpwhMake: '',
+        newHpwhModel: '',
+        newHpwhTankSize: '',
+        newHpwhEfficiencyFactory: '',
+        wifiEnabled: '',
+        macIdOrSn: '',
+        thermostaticMixingValve: '',
+        measureCostToCustomer: '',
+      },
+      inductioncooktop: {
+        dateInstalled: '',
+        existingFuelType: '',
+        existingApplianceType: '',
+        newApplianceType: '',
+        connectedLoad: '',
+        manufacturer: '',
+        model: '',
       },
       signature: '',
     }
   },
-  validations: {
-    account: {
-      pgeAccountNum: { required },
-      customerName: { required },
-      pgeGasSAID: { required },
-      pgeElectricSAID: { required },
-      customerPhone: { required },
-      customerEmail: { required },
-      language: { required },
-    },
-    mailingAddress: {
-      street: { required },
-      city: { required },
-      state: { required },
-      zip: { required },
-      installingContractor: { required },
-      rebatePayee: { required },
-      whereToSend: { required },
-    },
-    serviceAddress: {
-      street: { required },
-      city: { required },
-      state: { required },
-      zip: { required },
-    },
-    property: {
-      yearBuilt: { required },
-      preProjectArea: { required },
-      postProjectArea: { required },
-      electricPanelUpgraded: { required },
-      otherElectricUpgrades: { required },
-    },
-    heatpump: {
-      dateInstalled: { required },
-      existingFuelType: { required },
-      ahriNumber: { required },
-      newHpManufacturer: { required },
-      newHpModel: { required },
-      serial: { required },
-      hpUnitsInstalled: { required },
-      hspfRating: { required },
-      seerRating: { required },
-      measureCostToCustomer: { required },
-      existingHeatType: { required },
-      existingHeatSize: { required },
-      newPumpType: { required },
-      newPumpSize: { required },
-    },
-    signature: { required },
+  validations() {
+    return {
+      account: {
+        pgeAccountNum: { required },
+        customerName: { required },
+        pgeGasSAID: { required },
+        pgeElectricSAID: { required },
+        customerPhone: { required },
+        customerEmail: { required },
+        language: { required },
+      },
+      mailingAddress: {
+        street: { required },
+        city: { required },
+        state: { required },
+        zip: { required },
+        installingContractor: { required },
+        rebatePayee: { required },
+        whereToSend: { required },
+      },
+      serviceAddress: {
+        street: { required },
+        city: { required },
+        state: { required },
+        zip: { required },
+      },
+      property: {
+        yearBuilt: { required },
+        preProjectArea: { required },
+        postProjectArea: { required },
+        electricPanelUpgraded: { required },
+        otherElectricUpgrades: { required },
+      },
+      heatpump: {
+        dateInstalled: this.heatpumpSelected ? { required } : {},
+        existingFuelType: this.heatpumpSelected ? { required } : {},
+        ahriNumber: this.heatpumpSelected ? { required } : {},
+        newHpManufacturer: this.heatpumpSelected ? { required } : {},
+        newHpModel: this.heatpumpSelected ? { required } : {},
+        serial: this.heatpumpSelected ? { required } : {},
+        hpUnitsInstalled: this.heatpumpSelected ? { required } : {},
+        hspfRating: this.heatpumpSelected ? { required } : {},
+        seerRating: this.heatpumpSelected ? { required } : {},
+        measureCostToCustomer: this.heatpumpSelected ? { required } : {},
+        existingHeatType: this.heatpumpSelected ? { required } : {},
+        existingHeatSize: this.heatpumpSelected ? { required } : {},
+        existingCoolingType: this.heatpumpSelected ? { required } : {},
+        existingCoolingSize: this.heatpumpSelected ? { required } : {},
+        newPumpType: this.heatpumpSelected ? { required } : {},
+        newPumpSize: this.heatpumpSelected ? { required } : {},
+      },
+      heatpumpwaterheater: {
+        dateInstalled: this.heatpumpwaterheaterSelected ? { required } : {},
+        existingWaterHeaterFuelType: this.heatpumpwaterheaterSelected
+          ? { required }
+          : {},
+        newHpwhMake: this.heatpumpwaterheaterSelected ? { required } : {},
+        newHpwhModel: this.heatpumpwaterheaterSelected ? { required } : {},
+        newHpwhTankSize: this.heatpumpwaterheaterSelected ? { required } : {},
+        newHpwhEfficiencyFactory: this.heatpumpwaterheaterSelected
+          ? { required }
+          : {},
+        wifiEnabled: this.heatpumpwaterheaterSelected ? { required } : {},
+        macIdOrSn: this.heatpumpwaterheaterSelected ? { required } : {},
+        thermostaticMixingValve: this.heatpumpwaterheaterSelected
+          ? { required }
+          : {},
+        measureCostToCustomer: this.heatpumpwaterheaterSelected
+          ? { required }
+          : {},
+      },
+      inductioncooktop: {
+        dateInstalled: this.inductioncooktopSelected ? { required } : {},
+        existingFuelType: this.inductioncooktopSelected ? { required } : {},
+        existingApplianceType: this.inductioncooktopSelected
+          ? { required }
+          : {},
+        newApplianceType: this.inductioncooktopSelected ? { required } : {},
+        connectedLoad: this.inductioncooktopSelected ? { required } : {},
+        manufacturer: this.inductioncooktopSelected ? { required } : {},
+        model: this.inductioncooktopSelected ? { required } : {},
+      },
+      signature: { required },
+    }
   },
   methods: {
     setStep(newStep) {
       this.step = newStep
-      // const tabs = document.querySelector('.tabs-group')
-      // const viewport = tabs.getBoundingClientRect()
-      // const top = viewport.top + document.documentElement.scrollTop
-      // window.scrollTo(0, top)
+      const tabs = document.querySelector('.tabs-group')
+      const viewport = tabs.getBoundingClientRect()
+      const top = viewport.top + document.documentElement.scrollTop
+      window.scrollTo(0, top)
     },
     handleSubmit() {
       this.$v.$touch()
@@ -346,6 +426,27 @@ export default {
         }
         for (var key in this.property) {
           formData.append(`property.${key}`, this.property[key])
+        }
+        if (this.heatpumpSelected) {
+          for (var key in this.heatpump) {
+            formData.append(`heatpump.${key}`, this.heatpump[key])
+          }
+        }
+        if (this.heatpumpwaterheaterSelected) {
+          for (var key in this.heatpumpwaterheater) {
+            formData.append(
+              `heatpumpwaterheater.${key}`,
+              this.heatpumpwaterheater[key]
+            )
+          }
+        }
+        if (this.inductioncooktopSelected) {
+          for (var key in this.inductioncooktop) {
+            formData.append(
+              `inductioncooktop.${key}`,
+              this.inductioncooktop[key]
+            )
+          }
         }
         let postbody = new URLSearchParams(formData).toString()
         fetch('/', {

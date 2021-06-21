@@ -98,7 +98,80 @@
               required
             >
               <option value="" default selected hidden>Select Any</option>
-              <option value="english">English</option>
+              <option value="English">English</option>
+              <option value="Mandarin">Mandarin</option>
+              <option value="Cantonese">Cantonese</option>
+              <option value="Spanish">Spanish</option>
+              <option value="Tagalog/Filipino">Tagalog/Filipino</option>
+              <option value="Vietnamese">Vietnamese</option>
+              <option value="Russian">Russian</option>
+              <option value="French">French</option>
+              <option value="Korean">Korean</option>
+              <option value="Persian">Persian</option>
+              <option value="Hindi">Hindi</option>
+              <option value="German">German</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Arabic">Arabic</option>
+              <option value="Ilocano">Ilocano</option>
+              <option value="Samoan">Samoan</option>
+              <option value="Hawaiian or Other Austronesian Languages">
+                Hawaiian or Other Austronesian Languages
+              </option>
+              <option value="Portuguese">Portuguese</option>
+              <option value="Italian">Italian</option>
+              <option value="Thai">Thai</option>
+              <option value="Lao or Other Tai-Kadai Languages">
+                Lao or Other Tai-Kadai Languages
+              </option>
+              <option value="Armenian">Armenian</option>
+              <option value="Farsi">Farsi</option>
+              <option value="Dari">Dari</option>
+              <option value="Hebrew">Hebrew</option>
+              <option value="Khmer">Khmer</option>
+              <option value="Amharic">Amharic</option>
+              <option value="Somali or Other Afro-Asiatic Languages">
+                Somali or Other Afro-Asiatic Languages
+              </option>
+              <option value="Ukrainian">Ukrainian</option>
+              <option value="Bengali">Bengali</option>
+              <option value="Nepali">Nepali</option>
+              <option value="Marathi or Other Indic Languages">
+                Marathi or Other Indic Languages
+              </option>
+              <option value="Tamil">Tamil</option>
+              <option value="Urdu">Urdu</option>
+              <option value="Serbo-Croatian">Serbo-Croatian</option>
+              <option value="Swahili or Other Languages of Central">
+                Swahili or Other Languages of Central
+              </option>
+              <option value="Eastern">Eastern and Southern Africa</option>
+              <option value="Gujarati">Gujarati</option>
+              <option value="Greek">Greek</option>
+              <option value="Yiddish">Yiddish</option>
+              <option
+                value="Pennsylvania Dutch or Other West Germanic Languages"
+              >
+                Pennsylvania Dutch or Other West Germanic Languages
+              </option>
+              <option value="Punjabi">Punjabi</option>
+              <option value="Malayalam">Malayalam</option>
+              <option value="Kannada">Kannada</option>
+              <option value="or Other Dravidian Languages">
+                or Other Dravidian Languages
+              </option>
+              <option value="Telugu">Telugu</option>
+              <option value="Polish">Polish</option>
+              <option value="Yoruba">Yoruba</option>
+              <option value="Twi">Twi</option>
+              <option value="Igbo or Other Languages of Western Africa">
+                Igbo or Other Languages of Western Africa
+              </option>
+              <option value="Hmong">Hmong</option>
+              <option value="Haitian">Haitian</option>
+              <option value="Navajo">Navajo</option>
+              <option value="Do not wish to disclose">
+                Do not wish to disclose
+              </option>
             </select>
           </div>
           <div
@@ -195,7 +268,12 @@
               v-model="account.householdGrossIncome"
             >
               <option value="" default selected hidden>Select Any</option>
-              <option value="100k">$100K+</option>
+              <option value="Less than $48,000">Less than $48,000</option>
+              <option value="$48,000 to $125,000">$48,000 to $125,000</option>
+              <option value="Greater than $125,000">
+                Greater than $125,000
+              </option>
+              <option value="Not disclosed">Do not wish to disclose</option>
             </select>
           </div>
         </div>
