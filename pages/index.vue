@@ -212,18 +212,6 @@ h2 {
   margin: 12px 0 16px;
 }
 
-.tabs-group {
-}
-.tab {
-  color: #4f5263;
-  background: #f8f9fa;
-  width: 256px;
-  height: 96px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: inline;
-}
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
