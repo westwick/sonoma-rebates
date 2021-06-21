@@ -24,24 +24,27 @@
                 <span class="text-red-500">*</span> Required fields
               </p>
               <div class="tabs-group mb-8">
-                <span
+                <div
                   class="tab"
                   :class="{ 'tab-active': step === 1 }"
                   @click="setStep(1)"
-                  >Customer Details</span
                 >
-                <span
+                  Customer Details
+                </div>
+                <div
                   class="tab"
                   :class="{ 'tab-active': step === 2 }"
                   @click="setStep(2)"
-                  >Rebate Details</span
                 >
-                <span
+                  Rebate Details
+                </div>
+                <div
                   class="tab"
                   :class="{ 'tab-active': step === 3 }"
                   @click="setStep(3)"
-                  >Sign &amp; Submit</span
                 >
+                  Sign &amp; Submit
+                </div>
               </div>
               <div class="mainform">
                 <form

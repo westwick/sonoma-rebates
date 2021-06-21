@@ -46,20 +46,20 @@
     <div class="product-tabs">
       <div class="product-tabs-container container mx-auto">
         <div class="tabs-group">
-          <span
+          <div
             class="tab product-tab product-qualifications"
             :class="{ 'tab-active': tab1active }"
             @click="setTab('qualifications')"
           >
             Qualifications
-          </span>
-          <span
+          </div>
+          <div
             class="tab product-tab product-documents"
             :class="{ 'tab-active': !tab1active }"
             @click="setTab('documents')"
           >
             Documents
-          </span>
+          </div>
         </div>
         <div
           class="product-qualifications-text"
