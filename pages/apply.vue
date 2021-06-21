@@ -47,12 +47,104 @@
                 </div>
               </div>
               <div class="mainform">
+                <form data-netlify="true" name="ajaxform" class="netlify-form">
+                  <input type="hidden" name="account.pgeAccountNum" />
+                  <input type="hidden" name="account.customerName" />
+                  <input type="hidden" name="account.pgeGasSAID" />
+                  <input type="hidden" name="account.pgeElectricSAID" />
+                  <input type="hidden" name="account.customerPhone" />
+                  <input type="hidden" name="account.customerEmail" />
+                  <input type="hidden" name="account.language" />
+                  <input type="hidden" name="account.householdGrossIncome" />
+                  <input type="hidden" name="mailingAddress.street" />
+                  <input type="hidden" name="mailingAddress.city" />
+                  <input type="hidden" name="mailingAddress.state" />
+                  <input type="hidden" name="mailingAddress.zip" />
+                  <input
+                    type="hidden"
+                    name="mailingAddress.installingContractor"
+                  />
+                  <input type="hidden" name="mailingAddress.rebatePayee" />
+                  <input type="hidden" name="mailingAddress.whereToSend" />
+                  <input type="hidden" name="serviceAddress.street" />
+                  <input type="hidden" name="serviceAddress.city" />
+                  <input type="hidden" name="serviceAddress.state" />
+                  <input type="hidden" name="serviceAddress.zip" />
+                  <input type="hidden" name="property.yearBuilt" />
+                  <input type="hidden" name="property.preProjectArea" />
+                  <input type="hidden" name="property.postProjectArea" />
+                  <input type="hidden" name="property.electricPanelUpgraded" />
+                  <input type="hidden" name="property.otherElectricUpgrades" />
+                  <input type="hidden" name="heatpump.dateInstalled" />
+                  <input type="hidden" name="heatpump.existingFuelType" />
+                  <input type="hidden" name="heatpump.ahriNumber" />
+                  <input type="hidden" name="heatpump.newHpManufacturer" />
+                  <input type="hidden" name="heatpump.newHpModel" />
+                  <input type="hidden" name="heatpump.serial" />
+                  <input type="hidden" name="heatpump.hpUnitsInstalled" />
+                  <input type="hidden" name="heatpump.hspfRating" />
+                  <input type="hidden" name="heatpump.seerRating" />
+                  <input type="hidden" name="heatpump.measureCostToCustomer" />
+                  <input type="hidden" name="heatpump.existingHeatType" />
+                  <input type="hidden" name="heatpump.existingHeatSize" />
+                  <input type="hidden" name="heatpump.existingCoolingType" />
+                  <input type="hidden" name="heatpump.existingCoolingSize" />
+                  <input type="hidden" name="heatpump.newPumpType" />
+                  <input type="hidden" name="heatpump.newPumpSize" />
+                  <input
+                    type="hidden"
+                    name="heatpumpwaterheater.dateInstalled"
+                  />
+                  <input
+                    type="hidden"
+                    name="heatpumpwaterheater.existingWaterHeaterFuelType"
+                  />
+                  <input type="hidden" name="heatpumpwaterheater.newHpwhMake" />
+                  <input
+                    type="hidden"
+                    name="heatpumpwaterheater.newHpwhModel"
+                  />
+                  <input
+                    type="hidden"
+                    name="heatpumpwaterheater.newHpwhTankSize"
+                  />
+                  <input
+                    type="hidden"
+                    name="heatpumpwaterheater.newHpwhEfficiencyFactory"
+                  />
+                  <input type="hidden" name="heatpumpwaterheater.wifiEnabled" />
+                  <input type="hidden" name="heatpumpwaterheater.macIdOrSn" />
+                  <input
+                    type="hidden"
+                    name="heatpumpwaterheater.thermostaticMixingValve"
+                  />
+                  <input
+                    type="hidden"
+                    name="heatpumpwaterheater.measureCostToCustomer"
+                  />
+                  <input type="hidden" name="inductioncooktop.dateInstalled" />
+                  <input
+                    type="hidden"
+                    name="inductioncooktop.existingFuelType"
+                  />
+                  <input
+                    type="hidden"
+                    name="inductioncooktop.existingApplianceType"
+                  />
+                  <input
+                    type="hidden"
+                    name="inductioncooktop.newApplianceType"
+                  />
+                  <input type="hidden" name="inductioncooktop.connectedLoad" />
+                  <input type="hidden" name="inductioncooktop.manufacturer" />
+                  <input type="hidden" name="inductioncooktop.model" />
+                  <input type="hidden" name="signature" />
+                </form>
                 <form
                   method="POST"
                   action="/submit"
-                  name="ajaxform"
+                  name="vueform"
                   id="mainform"
-                  data-netlify="true"
                 >
                   <div v-if="step === 1">
                     <FormsCustomerDetails
@@ -418,18 +510,18 @@ export default {
       } else {
         let formData = new FormData()
         formData.append('form-name', 'ajaxform')
-        // for (var key in this.account) {
-        //   formData.append(`account.${key}`, this.account[key])
-        // }
-        // for (var key in this.mailingAddress) {
-        //   formData.append(`mailingAddress.${key}`, this.mailingAddress[key])
-        // }
-        // for (var key in this.serviceAddress) {
-        //   formData.append(`serviceAddress.${key}`, this.serviceAddress[key])
-        // }
-        // for (var key in this.property) {
-        //   formData.append(`property.${key}`, this.property[key])
-        // }
+        for (var key in this.account) {
+          formData.append(`account.${key}`, this.account[key])
+        }
+        for (var key in this.mailingAddress) {
+          formData.append(`mailingAddress.${key}`, this.mailingAddress[key])
+        }
+        for (var key in this.serviceAddress) {
+          formData.append(`serviceAddress.${key}`, this.serviceAddress[key])
+        }
+        for (var key in this.property) {
+          formData.append(`property.${key}`, this.property[key])
+        }
         if (this.heatpumpSelected) {
           for (var key in this.heatpump) {
             formData.append(`heatpump.${key}`, this.heatpump[key])
@@ -583,5 +675,8 @@ span.r,
 
 input[type='checkbox'] {
   border-radius: 3px;
+}
+.netlify-form {
+  display: none;
 }
 </style>
