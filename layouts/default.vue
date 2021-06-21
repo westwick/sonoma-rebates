@@ -8,6 +8,8 @@
 </template>
 
 <style>
+@import url('@uppy/robodog/dist/robodog.css');
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;

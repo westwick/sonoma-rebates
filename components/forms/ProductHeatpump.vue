@@ -457,6 +457,100 @@
         </div>
       </div>
     </div>
+    <div class="grid grid-cols-2 gap-x-4">
+      <div>
+        <div
+          class="form-group"
+          :class="{
+            'form-group--error': validator.heatpump.proofOfPermitClosure.$error,
+          }"
+        >
+          <label class="form__label"
+            >Proof of Permit Closure<span class="r">*</span></label
+          >
+          <FormsUploadButton
+            v-model="validator.heatpump.proofOfPermitClosure.$model"
+          />
+        </div>
+        <div
+          class="error"
+          v-if="
+            validator.heatpump.proofOfPermitClosure.$error &&
+            !validator.heatpump.proofOfPermitClosure.required
+          "
+        >
+          * Required
+        </div>
+      </div>
+      <div>
+        <div
+          class="form-group"
+          :class="{
+            'form-group--error': validator.heatpump.casSheet.$error,
+          }"
+        >
+          <label class="form__label">CAS sheet<span class="r">*</span></label>
+
+          <FormsUploadButton v-model="validator.heatpump.casSheet.$model" />
+        </div>
+        <div
+          class="error"
+          v-if="
+            validator.heatpump.casSheet.$error &&
+            !validator.heatpump.casSheet.required
+          "
+        >
+          * Required
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-x-4">
+      <div>
+        <div
+          class="form-group"
+          :class="{
+            'form-group--error': validator.heatpump.photoOld.$error,
+          }"
+        >
+          <label class="form__label"
+            >Photo of Existing Equipment<span class="r">*</span></label
+          >
+          <FormsUploadButton v-model="validator.heatpump.photoOld.$model" />
+        </div>
+        <div
+          class="error"
+          v-if="
+            validator.heatpump.photoOld.$error &&
+            !validator.heatpump.photoOld.required
+          "
+        >
+          * Required
+        </div>
+      </div>
+      <div>
+        <div
+          class="form-group"
+          :class="{
+            'form-group--error': validator.heatpump.photoNew.$error,
+          }"
+        >
+          <label class="form__label"
+            >Photo of New Equipment<span class="r">*</span></label
+          >
+
+          <FormsUploadButton v-model="validator.heatpump.photoNew.$model" />
+        </div>
+        <div
+          class="error"
+          v-if="
+            validator.heatpump.photoNew.$error &&
+            !validator.heatpump.photoNew.required
+          "
+        >
+          * Required
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

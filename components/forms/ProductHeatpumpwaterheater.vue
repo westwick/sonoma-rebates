@@ -308,6 +308,107 @@
         </div>
       </div>
     </div>
+    <div class="grid grid-cols-2 gap-x-4">
+      <div>
+        <div
+          class="form-group"
+          :class="{
+            'form-group--error':
+              validator.heatpumpwaterheater.proofOfMixingValue.$error,
+          }"
+        >
+          <label class="form__label"
+            >Proof of Mixing Value<span class="r">*</span></label
+          >
+          <FormsUploadButton
+            v-model="validator.heatpumpwaterheater.proofOfMixingValue.$model"
+          />
+        </div>
+        <div
+          class="error"
+          v-if="
+            validator.heatpumpwaterheater.proofOfMixingValue.$error &&
+            !validator.heatpumpwaterheater.proofOfMixingValue.required
+          "
+        >
+          * Required
+        </div>
+      </div>
+      <div>
+        <div
+          class="form-group"
+          :class="{
+            'form-group--error': validator.heatpumpwaterheater.casSheet.$error,
+          }"
+        >
+          <label class="form__label">CAS sheet<span class="r">*</span></label>
+
+          <FormsUploadButton
+            v-model="validator.heatpumpwaterheater.casSheet.$model"
+          />
+        </div>
+        <div
+          class="error"
+          v-if="
+            validator.heatpumpwaterheater.casSheet.$error &&
+            !validator.heatpumpwaterheater.casSheet.required
+          "
+        >
+          * Required
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-x-4">
+      <div>
+        <div
+          class="form-group"
+          :class="{
+            'form-group--error': validator.heatpumpwaterheater.photoOld.$error,
+          }"
+        >
+          <label class="form__label"
+            >Photo of Existing Equipment<span class="r">*</span></label
+          >
+          <FormsUploadButton
+            v-model="validator.heatpumpwaterheater.photoOld.$model"
+          />
+        </div>
+        <div
+          class="error"
+          v-if="
+            validator.heatpumpwaterheater.photoOld.$error &&
+            !validator.heatpumpwaterheater.photoOld.required
+          "
+        >
+          * Required
+        </div>
+      </div>
+      <div>
+        <div
+          class="form-group"
+          :class="{
+            'form-group--error': validator.heatpumpwaterheater.photoNew.$error,
+          }"
+        >
+          <label class="form__label"
+            >Photo of New Equipment<span class="r">*</span></label
+          >
+
+          <FormsUploadButton
+            v-model="validator.heatpumpwaterheater.photoNew.$model"
+          />
+        </div>
+        <div
+          class="error"
+          v-if="
+            validator.heatpumpwaterheater.photoNew.$error &&
+            !validator.heatpumpwaterheater.photoNew.required
+          "
+        >
+          * Required
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

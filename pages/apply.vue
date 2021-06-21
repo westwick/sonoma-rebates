@@ -16,6 +16,7 @@
           <div class="grid grid-cols-4">
             <div class="col-span-3 bg-white mainform-container">
               <h1>Get started</h1>
+              <button @click="handleUpload()">Upload</button>
               <p class="text-lg">
                 Please ensure all the necessary fields are complete and accurate
                 so that your application form can be successfully processed.
@@ -91,6 +92,10 @@
                   <input type="hidden" name="heatpump.existingCoolingSize" />
                   <input type="hidden" name="heatpump.newPumpType" />
                   <input type="hidden" name="heatpump.newPumpSize" />
+                  <input type="hidden" name="heatpump.proofOfPermitClosure" />
+                  <input type="hidden" name="heatpump.casSheet" />
+                  <input type="hidden" name="heatpump.photoOld" />
+                  <input type="hidden" name="heatpump.photoNew" />
                   <input
                     type="hidden"
                     name="heatpumpwaterheater.dateInstalled"
@@ -122,6 +127,13 @@
                     type="hidden"
                     name="heatpumpwaterheater.measureCostToCustomer"
                   />
+                  <input
+                    type="hidden"
+                    name="heatpumpwaterheater.proofOfMixingValue"
+                  />
+                  <input type="hidden" name="heatpumpwaterheater.casSheet" />
+                  <input type="hidden" name="heatpumpwaterheater.photoOld" />
+                  <input type="hidden" name="heatpumpwaterheater.photoNew" />
                   <input type="hidden" name="inductioncooktop.dateInstalled" />
                   <input
                     type="hidden"
@@ -165,7 +177,7 @@
                     <FormsProperty :property="property" :validator="$v" />
                     <button
                       class="button-cta mx-auto mt-8 mb-8"
-                      @click="setStep(2)"
+                      @click.prevent="setStep(2)"
                     >
                       Continue
                     </button>
@@ -257,10 +269,16 @@
                         </div>
                       </div>
                     </div>
-                    <div class="bg-gray-100 p-8 mt-8">
+                    <button
+                      class="button-cta mx-auto mt-8 mb-8"
+                      @click.prevent="setStep(3)"
+                    >
+                      Continue
+                    </button>
+                    <!-- <div class="bg-gray-100 p-8 mt-8">
                       <p class="form-section-name mb-4">Supporting Documents</p>
                       <p class="font-lg mb-4">Please upload the following:</p>
-                    </div>
+                    </div> -->
                   </div>
                   <div v-if="step === 3">
                     <div class="bg-gray-100 p-8">
@@ -327,6 +345,7 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import Robodog from '@uppy/robodog'
 
 export default {
   data() {
@@ -385,6 +404,10 @@ export default {
         existingCoolingSize: '',
         newPumpType: '',
         newPumpSize: '',
+        proofOfPermitClosure: '',
+        casSheet: '',
+        photoOld: '',
+        photoNew: '',
       },
       heatpumpwaterheater: {
         dateInstalled: '',
@@ -397,6 +420,10 @@ export default {
         macIdOrSn: '',
         thermostaticMixingValve: '',
         measureCostToCustomer: '',
+        proofOfMixingValue: '',
+        casSheet: '',
+        photoOld: '',
+        photoNew: '',
       },
       inductioncooktop: {
         dateInstalled: '',
@@ -460,6 +487,10 @@ export default {
         existingCoolingSize: this.heatpumpSelected ? { required } : {},
         newPumpType: this.heatpumpSelected ? { required } : {},
         newPumpSize: this.heatpumpSelected ? { required } : {},
+        proofOfPermitClosure: this.heatpumpSelected ? { required } : {},
+        casSheet: this.heatpumpSelected ? { required } : {},
+        photoOld: this.heatpumpSelected ? { required } : {},
+        photoNew: this.heatpumpSelected ? { required } : {},
       },
       heatpumpwaterheater: {
         dateInstalled: this.heatpumpwaterheaterSelected ? { required } : {},
@@ -480,6 +511,12 @@ export default {
         measureCostToCustomer: this.heatpumpwaterheaterSelected
           ? { required }
           : {},
+        proofOfMixingValue: this.heatpumpwaterheaterSelected
+          ? { required }
+          : {},
+        casSheet: this.heatpumpwaterheaterSelected ? { required } : {},
+        photoOld: this.heatpumpwaterheaterSelected ? { required } : {},
+        photoNew: this.heatpumpwaterheaterSelected ? { required } : {},
       },
       inductioncooktop: {
         dateInstalled: this.inductioncooktopSelected ? { required } : {},
@@ -502,6 +539,23 @@ export default {
       const viewport = tabs.getBoundingClientRect()
       const top = viewport.top + document.documentElement.scrollTop
       window.scrollTo(0, top)
+    },
+    handleUpload() {
+      console.log('robodog', Robodog)
+      const resultPromise = Robodog.pick({
+        target: 'body',
+        params: {
+          auth: { key: '5314f85b82984dce8d0194ac88be17e3' },
+          template_id: '4a6598acae9342228925ffbbc7f6b243',
+          fields: {
+            path: 'test',
+          },
+        },
+      })
+      console.log('promise', resultPromise)
+      resultPromise.then((bundle) => {
+        console.log('bundle', bundle)
+      })
     },
     handleSubmit() {
       this.$v.$touch()
@@ -636,16 +690,19 @@ span.r,
   color: rgb(239, 68, 68);
 }
 .error {
-  position: absolute;
-  margin-top: -24px;
   font-size: 14px;
+  margin-bottom: 3px;
 }
 .form-group--error .form__label {
   color: rgb(239, 68, 68);
 }
 .form-group--error input,
-.form-group--eror select {
+.form-group--error select {
   border-color: rgb(239, 68, 68);
+  margin-bottom: 0;
+}
+.form-group--error .file-upload-button {
+  margin-bottom: 0;
 }
 .label-hint {
   font-size: 15px;
@@ -665,12 +722,12 @@ span.r,
   cursor: pointer;
 }
 .product-type {
-  border: 1px solid rgba(99, 131, 188, 1);
+  border: 1px solid #bac8e0;
   padding: 16px;
 }
 .product-type.product-selected {
   background: #fff;
-  border-color: rgba(0, 117, 253, 1);
+  border-color: #93c4fe;
 }
 
 input[type='checkbox'] {
