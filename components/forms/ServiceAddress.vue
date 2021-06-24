@@ -39,7 +39,7 @@
       >
         * Required
       </div>
-      <div class="grid grid-cols-3 gap-x-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8">
         <div>
           <div
             class="form-group"

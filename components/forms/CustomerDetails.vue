@@ -2,7 +2,7 @@
   <div class="customer-details">
     <div class="bg-gray-100 p-8">
       <p class="form-section-name mb-8">Account Information</p>
-      <div class="grid grid-cols-2 gap-x-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8">
         <div>
           <div
             class="form-group"

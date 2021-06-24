@@ -2,7 +2,7 @@
   <div class="property-info">
     <div class="bg-gray-100 p-8">
       <p class="form-section-name mb-8">Property</p>
-      <div class="grid grid-cols-2 gap-x-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8">
         <div>
           <div
             class="form-group"
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-2 gap-x-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8">
         <div>
           <div
             class="form-group"

@@ -1,9 +1,9 @@
 <template>
   <div id="footer">
     <div class="container mx-auto">
-      <div class="footer">
+      <div class="footer text-center lg:text-left">
         <div class="footer-logo">
-          <img src="~/assets/images/logo.svg" />
+          <img src="~/assets/images/logo.svg" class="mx-auto lg:mx-0" />
         </div>
         <div class="footer-support">
           <p>Support@bayren.org</p>
@@ -27,12 +27,14 @@
           footer-banner-container
           mx-auto
           flex
-          justify-between
           items-center
+          md:justify-between
         "
       >
-        <p>© 2021 Sonoma Clean Power Authority</p>
-        <div class="footer-social">
+        <p class="text-sm text-center md:text-left md:text-lg block w-full">
+          © 2021 Sonoma Clean Power Authority
+        </p>
+        <div class="footer-social hidden md:block md:w-full text-right">
           <a href="https://www.facebook.com/SonomaCleanPower/" target="_blank"
             ><i class="fab fa-facebook-square"></i
           ></a>
@@ -73,8 +75,6 @@ export default {}
   font-size: 25px;
   margin: 32px 0;
 }
-.footer-contact {
-}
 .footer-email {
   margin-top: 4px;
 }
@@ -84,9 +84,6 @@ export default {}
 }
 .footer-banner-container {
   height: 48px;
-}
-.footer-banner p {
-  font-size: 20px;
 }
 .footer-social {
   font-size: 24px;

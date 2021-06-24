@@ -27,7 +27,7 @@
       >
         * Required
       </div>
-      <div class="grid grid-cols-3 gap-x-8">
+      <div class="grid grid-cols-1 mg:grid-cols-3 gap-x-8">
         <div>
           <div
             class="form-group"
@@ -187,7 +187,7 @@
       >
         * Required
       </div>
-      <div class="grid grid-cols-2 gap-x-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8">
         <div>
           <div
             class="form-group"

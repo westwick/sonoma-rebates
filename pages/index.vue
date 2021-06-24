@@ -5,7 +5,9 @@
         <div class="container mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="cta">
-              <h1>Rebates for home energy improvements</h1>
+              <h1 class="text-2xl md:text-3xl lg:text-4xl">
+                Rebates for home energy improvements
+              </h1>
               <p>
                 A brighter future starts at home. Earn rebates for
                 energy-efficient solutions that help you save money and live
@@ -62,21 +64,21 @@
         <div class="container mx-auto rebate-types-container">
           <div class="all-rebates">All Rebates</div>
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-1 lg:gap-4">
-            <div class="rebate-type my-4 lg:my-32">
+            <div class="rebate-type my-4 lg:mt-8 lg:mb-32">
               <h2>Heat Pump</h2>
               <p class="text-ugray">Save Up To $2,000</p>
               <NuxtLink to="/rebates/heat-pump" class="button-cta"
                 >View Details</NuxtLink
               >
             </div>
-            <div class="rebate-type my-4 lg:my-32">
+            <div class="rebate-type my-4 lg:mt-8 lg:mb-32">
               <h2>Heat Pump Water Heater</h2>
               <p class="text-ugray">Save Up To $2,000</p>
               <NuxtLink to="/rebates/heat-pump-water-heater" class="button-cta"
                 >View Details</NuxtLink
               >
             </div>
-            <div class="rebate-type my-4 lg:my-32">
+            <div class="rebate-type my-4 lg:mt-8 lg:mb-32">
               <h2>Induction Cooktop</h2>
               <p class="text-ugray">Save Up To $300</p>
               <NuxtLink to="/rebates/induction-cooktop" class="button-cta"

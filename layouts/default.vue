@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<style>
+<style @lang="postcss">
 @import url('@uppy/robodog/dist/robodog.css');
 
 html {
@@ -48,8 +48,7 @@ a.link:hover {
   padding: 12px 48px;
   display: inline-block;
   background: transparent;
-  font-weight: bold;
-  font-size: 20px;
+  @apply font-bold text-base md:text-xl;
 }
 .button-cta:hover {
   background: rgba(223, 224, 84, 1);

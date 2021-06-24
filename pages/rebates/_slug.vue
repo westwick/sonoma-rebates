@@ -1,31 +1,42 @@
 <template>
   <div class="product-page">
     <div class="product-hero">
-      <div class="grid grid-cols-2">
-        <div class="product-hero-info-container">
-          <div class="product-hero-info">
+      <div class="grid grid-cols-6">
+        <div
+          class="
+            product-hero-info-container
+            col-span-4
+            md:col-span-3
+            pt-24
+            pb-36
+            md:pt-32 md:pb-44
+          "
+        >
+          <div class="product-hero-info w-60 md:w-80 mx-auto">
             <p class="text-rebates">Rebates</p>
-            <p class="text-product-title">
+            <p class="text-product-title text-2xl md:text-3xl lg:text-4xl">
               {{ page.name }}: Save up to {{ page.maxSavings }}
             </p>
           </div>
         </div>
-        <div class="product-hero-img"></div>
+        <div class="product-hero-img col-span-2 md:col-span-3"></div>
       </div>
     </div>
     <div class="product-main">
       <div class="product-main-container">
         <div class="container mx-auto">
-          <div class="grid grid-cols-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
             <div class="product-img col-span-4 bg-white">
               <img
-                class="mx-auto mt-8"
+                class="mx-auto mt-1 md:mt-8"
                 :src="require(`~/assets/images/${page.image}`)"
               />
             </div>
-            <div class="product-info col-span-5 bg-white pr-20">
-              <h2 class="product-headline">{{ page.headline }}</h2>
-              <p class="text-lg">{{ page.productInfo }}</p>
+            <div class="product-info col-span-5 bg-white p-4 md:pr-20">
+              <h2 class="product-headline mb-8 md:mt-12">
+                {{ page.headline }}
+              </h2>
+              <p class="text-lg mb-8 md:mb-2">{{ page.productInfo }}</p>
             </div>
             <div class="product-apply-now col-span-3 bg-gray-100">
               <p class="how-to-apply mb-4">HOW TO APPLY</p>
@@ -43,9 +54,9 @@
         </div>
       </div>
     </div>
-    <div class="product-tabs">
+    <div class="product-tabs p-4 md:p-0">
       <div class="product-tabs-container container mx-auto">
-        <div class="tabs-group">
+        <div class="tabs-group flex-col md:flex-row">
           <div
             class="tab product-tab product-qualifications"
             :class="{ 'tab-active': tab1active }"
@@ -153,15 +164,14 @@ export default {
 .product-hero-info-container {
   background: #382658;
   color: #fff;
-  padding: 128px 0 184px;
+  /* padding: 128px 0 184px; */
 }
 .product-hero-info {
-  width: 536px;
   margin: 0 auto;
-  padding-left: 48px;
 }
 .product-hero-img {
-  background: url('~/assets/images/product-hero.jpg') no-repeat top center;
+  background: url('~/assets/images/product-hero.jpg') no-repeat 40% center;
+  background-size: cover;
 }
 .text-rebates {
   text-transform: uppercase;
@@ -169,7 +179,6 @@ export default {
   font-weight: 600;
 }
 .text-product-title {
-  font-size: 40px;
   font-weight: bold;
 }
 
@@ -179,8 +188,6 @@ export default {
 .product-headline {
   font-size: 40px;
   color: #382658;
-  margin-top: 56px;
-  margin-bottom: 32px;
   font-weight: bold;
 }
 .product-apply-now {

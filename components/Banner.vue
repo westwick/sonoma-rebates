@@ -1,10 +1,10 @@
 <template>
   <div id="banner">
     <div class="container mx-auto">
-      <div class="link-back">
-        <a href="#">‹ Visit Sonoma Clean Power</a>
+      <div class="link-back ml-4 md:ml-0">
+        <a href="#" class="text-sm md:text-base">‹ Visit Sonoma Clean Power</a>
       </div>
-      <div class="banner-right">
+      <div class="banner-right hidden md:flex md:items-center">
         <div class="banner-contact">
           <a href="tel:18668786008">1 (866) 878-6008</a> |
           <a href="#">Contact Us</a>
@@ -54,8 +54,8 @@ export default {}
   justify-content: space-between;
 }
 .banner-right {
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
 }
 .banner-contact {
   padding-right: 96px;

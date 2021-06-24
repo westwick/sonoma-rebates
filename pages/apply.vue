@@ -13,8 +13,17 @@
     <div class="apply-main">
       <div class="apply-main-container">
         <div class="container mx-auto">
-          <div class="grid grid-cols-4">
-            <div class="col-span-3 bg-white mainform-container">
+          <div class="grid grid-cols-1 xl:grid-cols-4">
+            <div
+              class="
+                xl:col-span-3
+                bg-white
+                mainform-container
+                p-8
+                md:p-12
+                xl:pr-24
+              "
+            >
               <h1>Get started</h1>
               <p class="text-lg">
                 Please ensure all the necessary fields are complete and accurate
@@ -23,7 +32,7 @@
               <p class="required-hint">
                 <span class="text-red-500">*</span> Required fields
               </p>
-              <div class="tabs-group mb-8">
+              <div class="tabs-group flex-col md:flex-row mb-8">
                 <div
                   class="tab"
                   :class="{ 'tab-active': step === 1 }"
@@ -667,8 +676,8 @@ export default {
   margin-bottom: 8px;
 }
 .mainform-container {
-  padding: 56px;
-  padding-right: 104px;
+  /* padding: 56px;
+  padding-right: 104px; */
 }
 .required-hint {
   color: #7e8da7;

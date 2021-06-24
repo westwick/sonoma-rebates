@@ -1,6 +1,6 @@
 <template>
   <div class="heatpump-info">
-    <div class="grid grid-cols-2 gap-x-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
       <div>
         <div
           class="form-group"
@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-x-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
       <div>
         <div
           class="form-group"
@@ -124,7 +124,7 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-x-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
       <div>
         <div
           class="form-group"
@@ -189,7 +189,7 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-x-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
       <div>
         <div
           class="form-group"
@@ -249,7 +249,7 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-x-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
       <div>
         <div
           class="form-group"
@@ -312,7 +312,7 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-x-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
       <div>
         <div
           class="form-group"
@@ -362,7 +362,7 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-x-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
       <div>
         <div
           class="form-group"
