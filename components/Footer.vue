@@ -13,7 +13,9 @@
           <p>50 Santa Rosa Ave. 5th Floor</p>
           <p>Santa Rosa, CA 95404</p>
           <p class="footer-email">
-            <a href="#" class="link">info@sonomacleanpower.org</a>
+            <a href="mailto:info@sonomacleanpower.org" class="link"
+              >info@sonomacleanpower.org</a
+            >
           </p>
         </div>
       </div>
@@ -31,11 +33,25 @@
       >
         <p>© 2021 Sonoma Clean Power Authority</p>
         <div class="footer-social">
-          <i class="fab fa-facebook-square"></i>
-          <i class="fab fa-twitter-square"></i>
-          <i class="fab fa-instagram-square"></i>
-          <i class="fab fa-youtube-square"></i>
-          <i class="fab fa-linkedin"></i>
+          <a href="https://www.facebook.com/SonomaCleanPower/" target="_blank"
+            ><i class="fab fa-facebook-square"></i
+          ></a>
+          <a href="https://twitter.com/SonomaCleanPow" target="_blank"
+            ><i class="fab fa-twitter-square"></i
+          ></a>
+          <a href="https://www.instagram.com/sonomacleanpower/" target="_blank"
+            ><i class="fab fa-instagram-square"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/channel/UCtyV9LHYkxqGn-eysEIxkaw"
+            target="_blank"
+            ><i class="fab fa-youtube-square"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/sonoma-clean-power/"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
         </div>
       </div>
     </div>
