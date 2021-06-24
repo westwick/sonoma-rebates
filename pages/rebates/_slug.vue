@@ -74,12 +74,41 @@
         </div>
         <div class="product-qualifications-text" v-if="tab === 'documents'">
           <h1>Documents</h1>
-          <h2>Please be ready to provide the following information:</h2>
-          <ul class="list-disc">
-            <li v-for="doc in page.documents" :key="doc">
-              {{ doc }}
+          <h2>Please be ready to provide the following documentation:</h2>
+          <ul class="list-disc ml-4">
+            <li>Photo of existing appliance being replaced</li>
+            <li>Photo of new appliance</li>
+            <li>Photo of existing electrical panel</li>
+            <li>Photo of new electrical panel, if upgraded</li>
+            <li>Itemized invoice for electrical panel upgrade if applicable</li>
+            <li>
+              Itemized invoice for other electrification measures installed at
+              the site (if applicable)
             </li>
+            <li>
+              Photo of capped gas line(s) for electrification projects (if
+              applicable)
+            </li>
+            <li>
+              Itemized invoice/receipt paid by customer with model number(s)
+            </li>
+            <li>Application form</li>
+            <li>
+              W-9 signed by recipient of payment (if other than account holder)
+            </li>
+            <li>Copy of customer PG&amp;E bill showing SCP membership</li>
           </ul>
+          <div v-if="page.documents && page.documents.length > 0">
+            <h2 class="mt-8">
+              For {{ page.name.toLowerCase() }}s, you will also need to provide:
+            </h2>
+
+            <ul class="list-disc ml-4">
+              <li v-for="doc in page.documents" :key="doc">
+                {{ doc }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -94,6 +123,7 @@ export default {
 
     return {
       page,
+      slug,
     }
   },
   data() {

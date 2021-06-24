@@ -40,7 +40,10 @@
                   <span>2</span>
                   Review the list of required documents and have them ready.
                 </li>
-                <li><span>3</span> Complete the online application form.</li>
+                <li>
+                  <span>3</span> Complete the
+                  <NuxtLink to="/apply">online application form</NuxtLink>.
+                </li>
               </ol>
             </div>
           </div>
@@ -154,7 +157,6 @@ h2 {
   font-size: 1rem;
   width: 2rem;
   height: 2rem;
-
   border-radius: 50%;
   border: 1px solid #fff;
   color: #fff;
@@ -163,6 +165,12 @@ h2 {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+.apply-steps a {
+  text-decoration: underline;
+}
+.apply-steps a:hover {
+  text-decoration: none;
 }
 .get-started {
   padding: 96px 0 144px;

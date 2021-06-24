@@ -8,11 +8,25 @@
     "Date installed",
     "Existing heating system fuel type",
     "AHRI number",
-    "New heat pump manufacturer"
+    "New heat pump manufacturer",
+    "New heat pump model",
+    "Serial number",
+    "Number of heat pump units installed",
+    "HSPF Rating",
+    "Seer Rating",
+    "Measure cost to customer",
+    "Existing heating system type",
+    "Existing heating system size (in kBTU)",
+    "Existing cooling system type",
+    "Existing cooling system size (in tons)",
+    "New heat pump size (in tons)",
+    "New heat pump system type"
   ],
   "documents": [
-    "Photo of existing appliance being replaced",
-    "Photo of existing applianced",
-    "Photo of new appliance"
+    "Proof of permit closure",
+    "CAS Sheet",
+    "Photo of mixing valve",
+    "Photo of existing equipment being replaced (date and time stamped, include nameplate)",
+    "Photo of new equipment (date and time stamped, include nameplate and both indoor and outdoor units if applicable)"
   ]
 }

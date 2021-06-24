@@ -6,13 +6,12 @@
   "productInfo": "Induction cooking uses efficient technology to heat pots and pans, resulting in faster cook times, less wasted heat and a safer, healthier kitchen.",
   "qualifications": [
     "Date installed",
-    "Existing heating system fuel type",
-    "AHRI number",
-    "New heat pump manufacturer"
+    "Existing cooktop or range fuel type",
+    "Existing cooktop or range appliance type",
+    "New cooktop or range appliance type",
+    "Connected load (kW rating)",
+    "Manufacturer",
+    "Model"
   ],
-  "documents": [
-    "Photo of existing appliance being replaced",
-    "Photo of existing applianced",
-    "Photo of new appliance"
-  ]
+  "documents": []
 }
