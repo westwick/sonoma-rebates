@@ -3,7 +3,7 @@
     <div>
       <div class="hero-home">
         <div class="container mx-auto">
-          <div class="grid grid-cols-2">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="cta">
               <h1>Rebates for home energy improvements</h1>
               <p>
@@ -18,7 +18,7 @@
       </div>
       <div class="home-info">
         <div class="container mx-auto">
-          <div class="grid grid-cols-2">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="info-1">
               <h2>Live your best life</h2>
               <p>
@@ -61,22 +61,22 @@
       <div class="rebate-types">
         <div class="container mx-auto rebate-types-container">
           <div class="all-rebates">All Rebates</div>
-          <div class="grid grid-cols-3 gap-4">
-            <div class="rebate-type">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-1 lg:gap-4">
+            <div class="rebate-type my-4 lg:my-32">
               <h2>Heat Pump</h2>
               <p class="text-ugray">Save Up To $2,000</p>
               <NuxtLink to="/rebates/heat-pump" class="button-cta"
                 >View Details</NuxtLink
               >
             </div>
-            <div class="rebate-type">
+            <div class="rebate-type my-4 lg:my-32">
               <h2>Heat Pump Water Heater</h2>
               <p class="text-ugray">Save Up To $2,000</p>
               <NuxtLink to="/rebates/heat-pump-water-heater" class="button-cta"
                 >View Details</NuxtLink
               >
             </div>
-            <div class="rebate-type">
+            <div class="rebate-type my-4 lg:my-32">
               <h2>Induction Cooktop</h2>
               <p class="text-ugray">Save Up To $300</p>
               <NuxtLink to="/rebates/induction-cooktop" class="button-cta"
@@ -210,7 +210,6 @@ h2 {
   text-align: center;
   background: #fff;
   padding: 24px 0;
-  margin: 128px 0;
   box-shadow: 0px 0px 20px #8599aa80;
 }
 .rebate-type h2 {

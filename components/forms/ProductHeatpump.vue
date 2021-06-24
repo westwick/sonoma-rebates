@@ -90,7 +90,7 @@
           }"
         >
           <label class="form__label"
-            >New HP Manufacturer<span class="r">*</span></label
+            >New Heat Pump Manufacturer<span class="r">*</span></label
           >
           <input
             class="form__input"
@@ -119,7 +119,7 @@
           }"
         >
           <label class="form__label"
-            >New HP Model<span class="r">*</span></label
+            >New Heat Pump Model<span class="r">*</span></label
           >
           <input
             class="form__input"

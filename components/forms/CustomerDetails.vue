@@ -67,7 +67,7 @@
             >
             <input
               class="form__input"
-              type="text"
+              type="number"
               name="account.customerPhone"
               v-model="validator.account.customerPhone.$model"
             />

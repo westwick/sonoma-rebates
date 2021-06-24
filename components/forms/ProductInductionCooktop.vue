@@ -38,7 +38,7 @@
           }"
         >
           <label class="form__label"
-            >Existing Water Heater Fuel Type<span class="r">*</span></label
+            >Existing Cooktop or Range Fuel Type<span class="r">*</span></label
           >
 
           <select

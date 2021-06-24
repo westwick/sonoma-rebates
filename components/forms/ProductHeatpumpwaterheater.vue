@@ -74,7 +74,7 @@
           }"
         >
           <label class="form__label"
-            >New HPWH Make<span class="r">*</span></label
+            >New Heat Pump Water Heater Make<span class="r">*</span></label
           >
           <select
             v-model="validator.heatpumpwaterheater.newHpwhMake.$model"
@@ -104,7 +104,7 @@
           }"
         >
           <label class="form__label"
-            >New HPWH Model<span class="r">*</span></label
+            >New Heat Pump Water Heater Model<span class="r">*</span></label
           >
           <input
             class="form__input"
@@ -134,7 +134,9 @@
           }"
         >
           <label class="form__label"
-            >New HPWH Tank Size (gals)<span class="r">*</span></label
+            >New Heat Pump Water Heater Tank Size (gals)<span class="r"
+              >*</span
+            ></label
           >
           <input
             class="form__input"
@@ -162,7 +164,9 @@
           }"
         >
           <label class="form__label"
-            >New HPWH Efficiency Factor (UEF)<span class="r">*</span></label
+            >New Heat Pump Water Heater Efficiency Factor (UEF)<span class="r"
+              >*</span
+            ></label
           >
 
           <input

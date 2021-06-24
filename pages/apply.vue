@@ -16,7 +16,6 @@
           <div class="grid grid-cols-4">
             <div class="col-span-3 bg-white mainform-container">
               <h1>Get started</h1>
-              <button @click="handleUpload()">Upload</button>
               <p class="text-lg">
                 Please ensure all the necessary fields are complete and accurate
                 so that your application form can be successfully processed.
@@ -172,6 +171,7 @@
                     <FormsServiceAddress
                       :serviceAddress="serviceAddress"
                       :validator="$v"
+                      @sameAs="handleSameAs"
                       class="mb-8"
                     />
                     <FormsProperty :property="property" :validator="$v" />
@@ -297,7 +297,8 @@
                         application.
                       </p>
                       <p class="font-xl mb-4">
-                        Please type your name to provide your signature below.
+                        Please type your name to provide your signature
+                        below.<span class="r">*</span>
                       </p>
                       <div
                         class="form-group"
@@ -374,7 +375,6 @@ export default {
         whereToSend: '',
       },
       serviceAddress: {
-        sameAsMailing: false,
         street: '',
         city: '',
         state: '',
@@ -533,6 +533,19 @@ export default {
     }
   },
   methods: {
+    handleSameAs(e) {
+      if (e) {
+        this.serviceAddress.street = this.mailingAddress.street
+        this.serviceAddress.city = this.mailingAddress.city
+        this.serviceAddress.state = this.mailingAddress.state
+        this.serviceAddress.zip = this.mailingAddress.zip
+      } else {
+        this.serviceAddress.street = ''
+        this.serviceAddress.city = ''
+        this.serviceAddress.state = ''
+        this.serviceAddress.zip = ''
+      }
+    },
     setStep(newStep) {
       this.step = newStep
       const tabs = document.querySelector('.tabs-group')
@@ -560,7 +573,9 @@ export default {
     handleSubmit() {
       this.$v.$touch()
       if (this.$v.$invalid) {
-        alert('form incomplete')
+        alert(
+          'Some information is missing. Please review your form and ensure all required fields are complete.'
+        )
       } else {
         let formData = new FormData()
         formData.append('form-name', 'ajaxform')
@@ -603,7 +618,10 @@ export default {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: postbody,
         })
-          .then(() => console.log('Form successfully submitted'))
+          .then(() => {
+            console.log('Form successfully submitted')
+            this.$router.push('/thank-you')
+          })
           .catch((error) => alert(error))
       }
     },
@@ -668,6 +686,7 @@ label {
   margin-bottom: 8px;
 }
 input[type='text'],
+input[type='number'],
 select {
   width: 100%;
   font-size: 18px;
@@ -676,6 +695,7 @@ select {
   padding: 0.75rem 1rem;
 }
 input[type='text']:focus,
+input[type='number']:focus,
 select:focus {
   border-color: rgba(79, 82, 99, 1);
 }
