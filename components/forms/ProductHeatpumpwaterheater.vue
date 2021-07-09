@@ -227,14 +227,16 @@
             'form-group--error': validator.heatpumpwaterheater.macIdOrSn.$error,
           }"
         >
-          <label class="form__label"
-            >MAC ID or SN#<span class="r">*</span></label
+          <label class="form__label" :class="{ disabled: true }"
+            >MAC ID or SN#</label
           >
 
           <input
             class="form__input"
+            :class="{ disabled: true }"
             type="text"
             name="heatpumpwaterheater.newHpwhTankSize"
+            :disabled="true"
             v-model="validator.heatpumpwaterheater.macIdOrSn.$model"
           />
         </div>

@@ -7,7 +7,7 @@
       <div class="banner-right hidden md:flex md:items-center">
         <div class="banner-contact">
           <a href="tel:18668786008">1 (866) 878-6008</a> |
-          <a href="#">Contact Us</a>
+          <a href="mailto:support@bayren.org">Contact Us</a>
         </div>
         <div class="banner-social">
           <a href="https://www.facebook.com/SonomaCleanPower/" target="_blank"

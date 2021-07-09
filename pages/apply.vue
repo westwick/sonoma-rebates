@@ -513,7 +513,7 @@ export default {
           ? { required }
           : {},
         wifiEnabled: this.heatpumpwaterheaterSelected ? { required } : {},
-        macIdOrSn: this.heatpumpwaterheaterSelected ? { required } : {},
+        macIdOrSn: this.heatpumpwaterheaterSelected ? {} : {},
         thermostaticMixingValve: this.heatpumpwaterheaterSelected
           ? { required }
           : {},
@@ -764,5 +764,11 @@ input[type='checkbox'] {
 }
 .netlify-form {
   display: none;
+}
+label.disabled {
+  color: #aaa;
+}
+input.disabled {
+  border: 1px solid #ccc !important;
 }
 </style>
