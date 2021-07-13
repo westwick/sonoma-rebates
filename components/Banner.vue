@@ -53,10 +53,6 @@ export default {}
   align-items: center;
   justify-content: space-between;
 }
-.banner-right {
-  /* display: flex; */
-  /* align-items: center; */
-}
 .banner-contact {
   padding-right: 96px;
 }

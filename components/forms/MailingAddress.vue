@@ -198,12 +198,17 @@
             <label class="form__label"
               >Rebate Payee<span class="r">*</span></label
             >
-            <input
-              class="form__input"
-              type="text"
-              name="mailingAddress.rebatePayee"
+            <select
               v-model="validator.mailingAddress.rebatePayee.$model"
-            />
+              required
+            >
+              <option value="" default selected hidden>Select Any</option>
+              <option value="Gas Central or Package Furnace">
+                Account Holder
+              </option>
+              <option value="Gas Wall Furnance">Contractor</option>
+              <option value="Gas Floor Furnance">Other</option>
+            </select>
           </div>
           <div
             class="error"
@@ -219,26 +224,199 @@
           <div
             class="form-group"
             :class="{
-              'form-group--error': validator.mailingAddress.whereToSend.$error,
+              'form-group--error':
+                validator.mailingAddress.rebatePayeeName.$error,
             }"
           >
             <label class="form__label"
-              >Where do you want to send this rebate?<span class="r"
-                >*</span
-              ></label
+              >Rebate Payee Name<span class="r">*</span></label
             >
             <input
               class="form__input"
               type="text"
-              name="mailingAddress.whereToSend"
-              v-model="validator.mailingAddress.whereToSend.$model"
+              name="mailingAddress.rebatePayeeName"
+              v-model="validator.mailingAddress.rebatePayeeName.$model"
             />
           </div>
           <div
             class="error"
             v-if="
-              validator.mailingAddress.whereToSend.$error &&
-              !validator.mailingAddress.whereToSend.required
+              validator.mailingAddress.rebatePayeeName.$error &&
+              !validator.mailingAddress.rebatePayeeName.required
+            "
+          >
+            * Required
+          </div>
+        </div>
+      </div>
+      <div class="mb-4 flex items-center">
+        <input
+          type="checkbox"
+          class="mr-2"
+          name="sameAs"
+          id="sameAs"
+          @click="toggleSameAs($event)"
+        />
+        <label class="m-0" for="sameAs">Same as above</label>
+      </div>
+      <div
+        class="form-group"
+        :class="{
+          'form-group--error':
+            validator.mailingAddress.rebatePayeeStreet.$error,
+        }"
+      >
+        <label class="form__label"
+          >Rebate Payee Street Address<span class="r">*</span></label
+        >
+        <input
+          class="form__input"
+          type="text"
+          name="mailingAddress.rebatePayeeStreet"
+          v-model="validator.mailingAddress.rebatePayeeStreet.$model"
+        />
+      </div>
+      <div
+        class="error"
+        v-if="
+          validator.mailingAddress.rebatePayeeStreet.$error &&
+          !validator.mailingAddress.rebatePayeeStreet.required
+        "
+      >
+        * Required
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8">
+        <div>
+          <div
+            class="form-group"
+            :class="{
+              'form-group--error':
+                validator.mailingAddress.rebatePayeeCity.$error,
+            }"
+          >
+            <label class="form__label"
+              >Rebate Payee City<span class="r">*</span></label
+            >
+            <input
+              class="form__input"
+              type="text"
+              name="mailingAddress.rebatePayeecity"
+              v-model="validator.mailingAddress.rebatePayeeCity.$model"
+            />
+          </div>
+          <div
+            class="error"
+            v-if="
+              validator.mailingAddress.rebatePayeeCity.$error &&
+              !validator.mailingAddress.rebatePayeeCity.required
+            "
+          >
+            * Required
+          </div>
+        </div>
+        <div>
+          <div
+            class="form-group"
+            :class="{
+              'form-group--error':
+                validator.mailingAddress.rebatePayeeState.$error,
+            }"
+          >
+            <label class="form__label"
+              >Rebate Payee State<span class="r">*</span></label
+            >
+            <select
+              class="form__input"
+              v-model="validator.mailingAddress.rebatePayeeState.$model"
+              required
+            >
+              <option value="" default selected hidden>Select Any</option>
+              <option value="AL">AL</option>
+              <option value="AK">AK</option>
+              <option value="AZ">AZ</option>
+              <option value="AR">AR</option>
+              <option value="CA">CA</option>
+              <option value="CO">CO</option>
+              <option value="CT">CT</option>
+              <option value="DE">DE</option>
+              <option value="DC">DC</option>
+              <option value="FL">FL</option>
+              <option value="GA">GA</option>
+              <option value="HI">HI</option>
+              <option value="ID">ID</option>
+              <option value="IL">IL</option>
+              <option value="IN">IN</option>
+              <option value="IA">IA</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="LA">LA</option>
+              <option value="ME">ME</option>
+              <option value="MD">MD</option>
+              <option value="MA">MA</option>
+              <option value="MI">MI</option>
+              <option value="MN">MN</option>
+              <option value="MS">MS</option>
+              <option value="MO">MO</option>
+              <option value="MT">MT</option>
+              <option value="NE">NE</option>
+              <option value="NV">NV</option>
+              <option value="NH">NH</option>
+              <option value="NJ">NJ</option>
+              <option value="NM">NM</option>
+              <option value="NY">NY</option>
+              <option value="NC">NC</option>
+              <option value="ND">ND</option>
+              <option value="OH">OH</option>
+              <option value="OK">OK</option>
+              <option value="OR">OR</option>
+              <option value="PA">PA</option>
+              <option value="RI">RI</option>
+              <option value="SC">SC</option>
+              <option value="SD">SD</option>
+              <option value="TN">TN</option>
+              <option value="TX">TX</option>
+              <option value="UT">UT</option>
+              <option value="VT">VT</option>
+              <option value="VA">VA</option>
+              <option value="WA">WA</option>
+              <option value="WV">WV</option>
+              <option value="WI">WI</option>
+              <option value="WY">WY</option>
+            </select>
+          </div>
+          <div
+            class="error"
+            v-if="
+              validator.mailingAddress.rebatePayeeState.$error &&
+              !validator.mailingAddress.rebatePayeeState.required
+            "
+          >
+            * Required
+          </div>
+        </div>
+        <div>
+          <div
+            class="form-group"
+            :class="{
+              'form-group--error':
+                validator.mailingAddress.rebatePayeeZip.$error,
+            }"
+          >
+            <label class="form__label"
+              >Rebate Payee ZIP code<span class="r">*</span></label
+            >
+            <input
+              class="form__input"
+              type="number"
+              name="mailingAddress.rebatePayeeZip"
+              v-model="validator.mailingAddress.rebatePayeeZip.$model"
+            />
+          </div>
+          <div
+            class="error"
+            v-if="
+              validator.mailingAddress.rebatePayeeZip.$error &&
+              !validator.mailingAddress.rebatePayeeZip.required
             "
           >
             * Required
@@ -252,5 +430,10 @@
 <script>
 export default {
   props: ['mailingAddress', 'validator'],
+  methods: {
+    toggleSameAs(e) {
+      this.$emit('sameAs', e.target.checked)
+    },
+  },
 }
 </script>

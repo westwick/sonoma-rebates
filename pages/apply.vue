@@ -74,7 +74,14 @@
                     name="mailingAddress.installingContractor"
                   />
                   <input type="hidden" name="mailingAddress.rebatePayee" />
-                  <input type="hidden" name="mailingAddress.whereToSend" />
+                  <input type="hidden" name="mailingAddress.rebatePayeeName" />
+                  <input
+                    type="hidden"
+                    name="mailingAddress.rebatePayeeStreet"
+                  />
+                  <input type="hidden" name="mailingAddress.rebatePayeeCity" />
+                  <input type="hidden" name="mailingAddress.rebatePayeeState" />
+                  <input type="hidden" name="mailingAddress.rebatePayeeZip" />
                   <input type="hidden" name="serviceAddress.street" />
                   <input type="hidden" name="serviceAddress.city" />
                   <input type="hidden" name="serviceAddress.state" />
@@ -158,6 +165,21 @@
                   <input type="hidden" name="inductioncooktop.connectedLoad" />
                   <input type="hidden" name="inductioncooktop.manufacturer" />
                   <input type="hidden" name="inductioncooktop.model" />
+                  <input type="hidden" name="documents.electricalPanel" />
+                  <input type="hidden" name="documents.electricalPanelNew" />
+                  <input
+                    type="hidden"
+                    name="documents.electricalPanelInvoice"
+                  />
+                  <input
+                    type="hidden"
+                    name="documents.electrificationInvoice"
+                  />
+                  <input type="hidden" name="documents.cappedGasLines" />
+                  <input type="hidden" name="documents.itemizedInvoice" />
+                  <input type="hidden" name="documents.applicationForm" />
+                  <input type="hidden" name="documents.w9" />
+                  <input type="hidden" name="documents.pgeBill" />
                   <input type="hidden" name="signature" />
                 </form>
                 <form
@@ -175,6 +197,7 @@
                     <FormsMailingAddress
                       :mailingAddress="mailingAddress"
                       :validator="$v"
+                      @sameAs="handleSameAs2"
                       class="mb-8"
                     />
                     <FormsServiceAddress
@@ -275,6 +298,125 @@
                               :validator="$v"
                             />
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-gray-100 p-8 mt-8">
+                      <p class="form-section-name mb-4">Supporting Documents</p>
+                      <p class="font-lg mb-4">Please upload the following:</p>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                        <div>
+                          <div class="form-group">
+                            <label class="form__label"
+                              >Photo of existing electrical panel</label
+                            >
+                            <FormsUploadButton
+                              v-model="$v.documents.electricalPanel.$model"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <div class="form-group">
+                            <label class="form__label"
+                              >Photo of new electrical panel (if upgraded)
+                            </label>
+
+                            <FormsUploadButton
+                              v-model="$v.documents.electricalPanelNew.$model"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                        <div>
+                          <div class="form-group">
+                            <label class="form__label"
+                              >Itemized invoice for electrical panel upgrade (if
+                              applicable)</label
+                            >
+                            <FormsUploadButton
+                              v-model="
+                                $v.documents.electricalPanelInvoice.$model
+                              "
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <div class="form-group">
+                            <label class="form__label"
+                              >Itemized invoice for other electrification
+                              measures installed at the site (if applicable)
+                            </label>
+
+                            <FormsUploadButton
+                              v-model="
+                                $v.documents.electrificationInvoice.$model
+                              "
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                        <div>
+                          <div class="form-group">
+                            <label class="form__label"
+                              >Photo of capped gas line(s) for electrification
+                              projects (if applicable)</label
+                            >
+                            <FormsUploadButton
+                              v-model="$v.documents.cappedGasLines.$model"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <div class="form-group">
+                            <label class="form__label"
+                              >Itemized invoice/receipt paid by customer with
+                              model number(s)
+                            </label>
+
+                            <FormsUploadButton
+                              v-model="$v.documents.itemizedInvoice.$model"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                        <div>
+                          <div class="form-group">
+                            <label class="form__label">Application Form</label>
+                            <FormsUploadButton
+                              v-model="$v.documents.applicationForm.$model"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <div class="form-group">
+                            <label class="form__label"
+                              >W-9 signed by recipient of payment (if other than
+                              Account Holder)
+                            </label>
+
+                            <FormsUploadButton
+                              v-model="$v.documents.w9.$model"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                        <div>
+                          <div class="form-group">
+                            <label class="form__label"
+                              >Copy of customer PG&amp;E bill showing SCP
+                              membership</label
+                            >
+                            <FormsUploadButton
+                              v-model="$v.documents.pgeBill.$model"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <!-- placeholder for next form elem! -->
                         </div>
                       </div>
                     </div>
@@ -381,7 +523,11 @@ export default {
         zip: '',
         installingContractor: '',
         rebatePayee: '',
-        whereToSend: '',
+        rebatePayeeName: '',
+        rebatePayeeStreet: '',
+        rebatePayeeCity: '',
+        rebatePayeeState: '',
+        rebatePayeeZip: '',
       },
       serviceAddress: {
         street: '',
@@ -443,6 +589,17 @@ export default {
         manufacturer: '',
         model: '',
       },
+      documents: {
+        electricalPanel: '',
+        electricalPanelNew: '',
+        electricalPanelInvoice: '',
+        electrificationInvoice: '',
+        cappedGasLines: '',
+        itemizedInvoice: '',
+        applicationForm: '',
+        w9: '',
+        pgeBill: '',
+      },
       signature: '',
     }
   },
@@ -464,7 +621,11 @@ export default {
         zip: { required },
         installingContractor: { required },
         rebatePayee: { required },
-        whereToSend: { required },
+        rebatePayeeName: { required },
+        rebatePayeeStreet: { required },
+        rebatePayeeCity: { required },
+        rebatePayeeState: { required },
+        rebatePayeeZip: { required },
       },
       serviceAddress: {
         street: { required },
@@ -538,6 +699,17 @@ export default {
         manufacturer: this.inductioncooktopSelected ? { required } : {},
         model: this.inductioncooktopSelected ? { required } : {},
       },
+      documents: {
+        electricalPanel: {},
+        electricalPanelNew: {},
+        electricalPanelInvoice: {},
+        electrificationInvoice: {},
+        cappedGasLines: {},
+        itemizedInvoice: {},
+        applicationForm: {},
+        w9: {},
+        pgeBill: {},
+      },
       signature: { required },
     }
   },
@@ -553,6 +725,19 @@ export default {
         this.serviceAddress.city = ''
         this.serviceAddress.state = ''
         this.serviceAddress.zip = ''
+      }
+    },
+    handleSameAs2(e) {
+      if (e) {
+        this.mailingAddress.rebatePayeeStreet = this.mailingAddress.street
+        this.mailingAddress.rebatePayeeCity = this.mailingAddress.city
+        this.mailingAddress.rebatePayeeState = this.mailingAddress.state
+        this.mailingAddress.rebatePayeeZip = this.mailingAddress.zip
+      } else {
+        this.mailingAddress.rebatePayeeStreet = ''
+        this.mailingAddress.rebatePayeeCity = ''
+        this.mailingAddress.rebatePayeeState = ''
+        this.mailingAddress.rebatePayeeZip = ''
       }
     },
     setStep(newStep) {
@@ -674,10 +859,6 @@ export default {
   color: #4f5263;
   font-weight: bold;
   margin-bottom: 8px;
-}
-.mainform-container {
-  /* padding: 56px;
-  padding-right: 104px; */
 }
 .required-hint {
   color: #7e8da7;
