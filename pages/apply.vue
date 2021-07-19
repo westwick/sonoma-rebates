@@ -304,10 +304,10 @@
                     <div class="bg-gray-100 p-8 mt-8">
                       <p class="form-section-name mb-4">Supporting Documents</p>
                       <p class="font-lg mb-4">Please upload the following:</p>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                      <div class="grid grid-cols-1 md:grid-cols-1 gap-x-4">
                         <div>
                           <div class="form-group">
-                            <label class="form__label"
+                            <label class="form__label text-base"
                               >Photo of existing electrical panel</label
                             >
                             <FormsUploadButton
@@ -317,7 +317,7 @@
                         </div>
                         <div>
                           <div class="form-group">
-                            <label class="form__label"
+                            <label class="form__label text-base"
                               >Photo of new electrical panel (if upgraded)
                             </label>
 
@@ -327,10 +327,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                      <div class="grid grid-cols-1 md:grid-cols-1 gap-x-4">
                         <div>
                           <div class="form-group">
-                            <label class="form__label"
+                            <label class="form__label text-base"
                               >Itemized invoice for electrical panel upgrade (if
                               applicable)</label
                             >
@@ -343,7 +343,7 @@
                         </div>
                         <div>
                           <div class="form-group">
-                            <label class="form__label"
+                            <label class="form__label text-base"
                               >Itemized invoice for other electrification
                               measures installed at the site (if applicable)
                             </label>
@@ -356,10 +356,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                      <div class="grid grid-cols-1 md:grid-cols-1 gap-x-4">
                         <div>
                           <div class="form-group">
-                            <label class="form__label"
+                            <label class="form__label text-base"
                               >Photo of capped gas line(s) for electrification
                               projects (if applicable)</label
                             >
@@ -370,7 +370,7 @@
                         </div>
                         <div>
                           <div class="form-group">
-                            <label class="form__label"
+                            <label class="form__label text-base"
                               >Itemized invoice/receipt paid by customer with
                               model number(s)
                             </label>
@@ -381,10 +381,12 @@
                           </div>
                         </div>
                       </div>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                      <div class="grid grid-cols-1 md:grid-cols-1 gap-x-4">
                         <div>
                           <div class="form-group">
-                            <label class="form__label">Application Form</label>
+                            <label class="form__label text-base"
+                              >Application Form</label
+                            >
                             <FormsUploadButton
                               v-model="$v.documents.applicationForm.$model"
                             />
@@ -403,7 +405,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                      <div class="grid grid-cols-1 md:grid-cols-1 gap-x-4">
                         <div>
                           <div class="form-group">
                             <label class="form__label"
@@ -741,6 +743,50 @@ export default {
       }
     },
     setStep(newStep) {
+      if (newStep === 2) {
+        this.$v.account.$touch()
+        this.$v.mailingAddress.$touch()
+        this.$v.serviceAddress.$touch()
+        this.$v.property.$touch()
+
+        if (
+          this.$v.account.$invalid ||
+          this.$v.mailingAddress.$invalid ||
+          this.$v.serviceAddress.$invalid ||
+          this.$v.property.$invalid
+        ) {
+          alert(
+            'Some information is missing. Please review your form and ensure all required fields are complete.'
+          )
+          return
+        }
+      }
+
+      if (newStep === 3) {
+        this.$v.account.$touch()
+        this.$v.mailingAddress.$touch()
+        this.$v.serviceAddress.$touch()
+        this.$v.property.$touch()
+        this.$v.heatpump.$touch()
+        this.$v.heatpumpwaterheater.$touch()
+        this.$v.inductioncooktop.$touch()
+
+        if (
+          this.$v.account.$invalid ||
+          this.$v.mailingAddress.$invalid ||
+          this.$v.serviceAddress.$invalid ||
+          this.$v.property.$invalid ||
+          this.$v.heatpump.$invalid ||
+          this.$v.heatpumpwaterheater.$invalid ||
+          this.$v.inductioncooktop.$invalid
+        ) {
+          alert(
+            'Some information is missing. Please review your form and ensure all required fields are complete.'
+          )
+          return
+        }
+      }
+
       this.step = newStep
       const tabs = document.querySelector('.tabs-group')
       const viewport = tabs.getBoundingClientRect()
@@ -951,5 +997,14 @@ label.disabled {
 }
 input.disabled {
   border: 1px solid #ccc !important;
+}
+.has-tooltip:hover .tooltip,
+.has-tooltip.hover .tooltip {
+  visibility: visible;
+  z-index: 50;
+}
+.tooltip {
+  position: absolute;
+  visibility: hidden;
 }
 </style>

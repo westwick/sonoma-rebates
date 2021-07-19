@@ -10,7 +10,7 @@
           <p>1 (866) 878-6008</p>
         </div>
         <div class="footer-contact">
-          <p>50 Santa Rosa Ave. 5th Floor</p>
+          <p>431 E Street</p>
           <p>Santa Rosa, CA 95404</p>
           <p class="footer-email">
             <a href="mailto:info@sonomacleanpower.org" class="link"

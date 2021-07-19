@@ -140,7 +140,7 @@
             <label class="form__label">ZIP Code<span class="r">*</span></label>
             <input
               class="form__input"
-              type="number"
+              type="text"
               name="mailingAddress.zip"
               v-model="validator.mailingAddress.zip.$model"
             />
@@ -407,7 +407,7 @@
             >
             <input
               class="form__input"
-              type="number"
+              type="text"
               name="mailingAddress.rebatePayeeZip"
               v-model="validator.mailingAddress.rebatePayeeZip.$model"
             />

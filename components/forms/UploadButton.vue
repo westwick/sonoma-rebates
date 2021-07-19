@@ -76,6 +76,7 @@ export default {
   border: 1px solid #c5d1e6;
   height: 48px;
   font-size: 15px;
+  max-width: 640px;
 }
 .uploaded-wrap {
   height: 48px;

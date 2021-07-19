@@ -152,7 +152,7 @@
             <label class="form__label">ZIP code<span class="r">*</span></label>
             <input
               class="form__input"
-              type="number"
+              type="text"
               name="serviceAddress.zip"
               v-model="validator.serviceAddress.zip.$model"
             />

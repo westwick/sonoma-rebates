@@ -11,8 +11,24 @@
             }"
           >
             <label class="form__label"
-              >PG&amp;E Account #<span class="r">*</span></label
-            >
+              >PG&amp;E Account #<span class="r">*</span>
+              <span class="has-tooltip" @click="toggleTooltip($event)">
+                <i class="fas fa-question-circle"></i>
+                <span
+                  class="
+                    tooltip
+                    rounded
+                    shadow-lg
+                    p-2
+                    bg-gray-200
+                    -mt-8
+                    text-sm
+                  "
+                >
+                  Placeholder tooltip text
+                </span>
+              </span>
+            </label>
             <input
               class="form__input"
               type="text"
@@ -37,7 +53,23 @@
             }"
           >
             <label class="form__label"
-              >PG&amp;E Gas SAID<span class="r">*</span></label
+              >PG&amp;E Gas SAID<span class="r">*</span>
+              <span class="has-tooltip" @click="toggleTooltip($event)">
+                <i class="fas fa-question-circle"></i>
+                <span
+                  class="
+                    tooltip
+                    rounded
+                    shadow-lg
+                    p-2
+                    bg-gray-200
+                    -mt-8
+                    text-sm
+                  "
+                >
+                  Placeholder tooltip text
+                </span>
+              </span></label
             >
             <input
               class="form__input"
@@ -67,7 +99,7 @@
             >
             <input
               class="form__input"
-              type="number"
+              type="text"
               name="account.customerPhone"
               v-model="validator.account.customerPhone.$model"
             />
@@ -217,7 +249,23 @@
             }"
           >
             <label class="form__label"
-              >PG&amp;E Electric SAID<span class="r">*</span></label
+              >PG&amp;E Electric SAID<span class="r">*</span>
+              <span class="has-tooltip" @click="toggleTooltip($event)">
+                <i class="fas fa-question-circle"></i>
+                <span
+                  class="
+                    tooltip
+                    rounded
+                    shadow-lg
+                    p-2
+                    bg-gray-200
+                    -mt-8
+                    text-sm
+                  "
+                >
+                  Placeholder tooltip text
+                </span>
+              </span></label
             >
             <input
               class="form__input"
@@ -285,5 +333,10 @@
 <script>
 export default {
   props: ['account', 'validator'],
+  methods: {
+    toggleTooltip(e) {
+      e.target.closest('.has-tooltip').classList.toggle('hover')
+    },
+  },
 }
 </script>
