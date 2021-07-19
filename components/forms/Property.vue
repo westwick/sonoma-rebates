@@ -146,6 +146,15 @@
       >
         * Required
       </div>
+      <div class="form-group" v-if="property.otherElectricUpgrades === 'yes'">
+        <label class="form__label">Please list other upgrades performed:</label>
+        <input
+          class="form__input"
+          type="text"
+          name="property.preProjectArea"
+          v-model="validator.property.otherElectricUpgrades2.$model"
+        />
+      </div>
     </div>
   </div>
 </template>

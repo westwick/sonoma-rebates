@@ -2,6 +2,16 @@
   <div class="mailing-address">
     <div class="bg-gray-100 p-8">
       <p class="form-section-name mb-8">Account Mailing Address</p>
+      <div class="mb-4 flex items-center">
+        <input
+          type="checkbox"
+          class="mr-2"
+          name="sameAs"
+          id="sameAs"
+          @click="toggleSameAs($event, 1)"
+        />
+        <label class="m-0" for="sameAs">Same as above</label>
+      </div>
       <div
         class="form-group"
         :class="{
@@ -255,7 +265,7 @@
           class="mr-2"
           name="sameAs"
           id="sameAs"
-          @click="toggleSameAs($event)"
+          @click="toggleSameAs($event, 2)"
         />
         <label class="m-0" for="sameAs">Same as above</label>
       </div>
@@ -431,8 +441,8 @@
 export default {
   props: ['mailingAddress', 'validator'],
   methods: {
-    toggleSameAs(e) {
-      this.$emit('sameAs', e.target.checked)
+    toggleSameAs(e, which) {
+      this.$emit(which === 1 ? 'sameAs' : 'sameAs2', e.target.checked)
     },
   },
 }

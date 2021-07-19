@@ -23,9 +23,11 @@
                     bg-gray-200
                     -mt-8
                     text-sm
+                    w-80
                   "
                 >
-                  Placeholder tooltip text
+                  You can find your account # on the top right of your most
+                  recent bill
                 </span>
               </span>
             </label>
@@ -65,9 +67,12 @@
                     bg-gray-200
                     -mt-8
                     text-sm
+                    w-80
                   "
                 >
-                  Placeholder tooltip text
+                  You can find this listed as the Service Agreement ID on the
+                  middle left of page 5 (Details of Gas Charges) of your most
+                  recent bill
                 </span>
               </span></label
             >
@@ -261,9 +266,12 @@
                     bg-gray-200
                     -mt-8
                     text-sm
+                    w-80
                   "
                 >
-                  Placeholder tooltip text
+                  You can find this listed as the Service Agreement ID on the
+                  middle left of page 4 (Details of Sonoma Clean Power Electric
+                  Generation Charges) of your most recent bill
                 </span>
               </span></label
             >

@@ -91,6 +91,7 @@
                   <input type="hidden" name="property.postProjectArea" />
                   <input type="hidden" name="property.electricPanelUpgraded" />
                   <input type="hidden" name="property.otherElectricUpgrades" />
+                  <input type="hidden" name="property.otherElectricUpgrades2" />
                   <input type="hidden" name="heatpump.dateInstalled" />
                   <input type="hidden" name="heatpump.existingFuelType" />
                   <input type="hidden" name="heatpump.ahriNumber" />
@@ -194,16 +195,16 @@
                       :validator="$v"
                       class="mb-8"
                     />
-                    <FormsMailingAddress
-                      :mailingAddress="mailingAddress"
-                      :validator="$v"
-                      @sameAs="handleSameAs2"
-                      class="mb-8"
-                    />
                     <FormsServiceAddress
                       :serviceAddress="serviceAddress"
                       :validator="$v"
+                      class="mb-8"
+                    />
+                    <FormsMailingAddress
+                      :mailingAddress="mailingAddress"
+                      :validator="$v"
                       @sameAs="handleSameAs"
+                      @sameAs2="handleSameAs2"
                       class="mb-8"
                     />
                     <FormsProperty :property="property" :validator="$v" />
@@ -543,6 +544,7 @@ export default {
         postProjectArea: '',
         electricPanelUpgraded: '',
         otherElectricUpgrades: '',
+        otherElectricUpgrades2: '',
       },
       heatpump: {
         dateInstalled: '',
@@ -641,6 +643,7 @@ export default {
         postProjectArea: { required },
         electricPanelUpgraded: { required },
         otherElectricUpgrades: { required },
+        otherElectricUpgrades2: {},
       },
       heatpump: {
         dateInstalled: this.heatpumpSelected ? { required } : {},
@@ -718,23 +721,23 @@ export default {
   methods: {
     handleSameAs(e) {
       if (e) {
-        this.serviceAddress.street = this.mailingAddress.street
-        this.serviceAddress.city = this.mailingAddress.city
-        this.serviceAddress.state = this.mailingAddress.state
-        this.serviceAddress.zip = this.mailingAddress.zip
+        this.mailingAddress.street = this.serviceAddress.street
+        this.mailingAddress.city = this.serviceAddress.city
+        this.mailingAddress.state = this.serviceAddress.state
+        this.mailingAddress.zip = this.serviceAddress.zip
       } else {
-        this.serviceAddress.street = ''
-        this.serviceAddress.city = ''
-        this.serviceAddress.state = ''
-        this.serviceAddress.zip = ''
+        this.mailingAddress.street = ''
+        this.mailingAddress.city = ''
+        this.mailingAddress.state = ''
+        this.mailingAddress.zip = ''
       }
     },
     handleSameAs2(e) {
       if (e) {
-        this.mailingAddress.rebatePayeeStreet = this.mailingAddress.street
-        this.mailingAddress.rebatePayeeCity = this.mailingAddress.city
-        this.mailingAddress.rebatePayeeState = this.mailingAddress.state
-        this.mailingAddress.rebatePayeeZip = this.mailingAddress.zip
+        this.mailingAddress.rebatePayeeStreet = this.serviceAddress.street
+        this.mailingAddress.rebatePayeeCity = this.serviceAddress.city
+        this.mailingAddress.rebatePayeeState = this.serviceAddress.state
+        this.mailingAddress.rebatePayeeZip = this.serviceAddress.zip
       } else {
         this.mailingAddress.rebatePayeeStreet = ''
         this.mailingAddress.rebatePayeeCity = ''

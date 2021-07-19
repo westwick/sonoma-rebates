@@ -4,16 +4,6 @@
       <p class="form-section-name mb-8">
         Service Address For Installed Equipment
       </p>
-      <div class="mb-4 flex items-center">
-        <input
-          type="checkbox"
-          class="mr-2"
-          name="sameAs"
-          id="sameAs"
-          @click="toggleSameAs($event)"
-        />
-        <label class="m-0" for="sameAs">Same as above</label>
-      </div>
       <div
         class="form-group"
         :class="{
