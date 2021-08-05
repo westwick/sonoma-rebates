@@ -856,7 +856,7 @@ export default {
           }
         }
         let postbody = new URLSearchParams(formData).toString()
-        fetch('/', {
+        fetch('/gridsavvy/Mendocino/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: postbody,
