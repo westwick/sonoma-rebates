@@ -29,7 +29,9 @@
             <div class="product-img col-span-4 bg-white">
               <img
                 class="mx-auto mt-1 md:mt-8"
-                :src="require(`~/assets/images/${page.image}`)"
+                :src="
+                  require(`~/assets/gridsavvy/Mendocino/images/${page.image}`)
+                "
               />
             </div>
             <div class="product-info col-span-5 bg-white p-4 md:pr-20">
@@ -79,7 +81,7 @@
           <h1>Qualifications</h1>
           <h2>Please be ready to provide the following information:</h2>
           <p v-for="qual in page.qualifications" :key="qual">
-            <img src="~/assets/images/checkbox-icon.svg" />
+            <img src="~/assets/gridsavvy/Mendocino/images/checkbox-icon.svg" />
             {{ qual }}
           </p>
         </div>
@@ -156,7 +158,7 @@ export default {
 </script>
 
 <style>
-@import url('~/assets/css/tabs.css');
+@import url('~/assets/gridsavvy/Mendocino/css/tabs.css');
 .tabs-group {
   margin-bottom: 48px;
 }
@@ -170,7 +172,8 @@ export default {
   margin: 0 auto;
 }
 .product-hero-img {
-  background: url('~/assets/images/product-hero.jpg') no-repeat 40% center;
+  background: url('~/assets/gridsavvy/Mendocino/images/product-hero.jpg')
+    no-repeat 40% center;
   background-size: cover;
 }
 .text-rebates {

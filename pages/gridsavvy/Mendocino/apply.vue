@@ -873,7 +873,7 @@ export default {
 </script>
 
 <style>
-@import url('~/assets/css/tabs.css');
+@import url('~/assets/gridsavvy/Mendocino/css/tabs.css');
 
 .apply-hero-container {
   background: #382658;

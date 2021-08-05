@@ -3,7 +3,10 @@
     <div class="container mx-auto">
       <div class="footer text-center lg:text-left">
         <div class="footer-logo">
-          <img src="~/assets/images/logo.svg" class="mx-auto lg:mx-0" />
+          <img
+            src="~/assets/gridsavvy/Mendocino/images/logo.svg"
+            class="mx-auto lg:mx-0"
+          />
         </div>
         <div class="footer-support">
           <p>Support@bayren.org</p>
