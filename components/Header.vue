@@ -5,7 +5,7 @@
         <div class="logo">
           <NuxtLink to="/"
             ><img
-              src="~/assets/gridsavvy/Mendocino/images/logo.svg"
+              src="~/assets/images/logo.svg"
               class="ml-4 my-6 md:ml-0"
           /></NuxtLink>
         </div>

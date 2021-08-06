@@ -56,7 +56,7 @@
           <div class="flex flex-col content-center text-center">
             <p class="text-ugray">GET STARTED</p>
             <img
-              src="~/assets/gridsavvy/Mendocino/images/getstarted-icon.svg"
+              src="~/assets/images/getstarted-icon.svg"
             />
             <h2>Please choose your project type below</h2>
           </div>
@@ -101,7 +101,7 @@ export default {}
 <style>
 .hero-home {
   /* height: 680px; */
-  background: url('~/assets/gridsavvy/Mendocino/images/home.jpg') no-repeat
+  background: url('~/assets/images/home.jpg') no-repeat
     center center;
   background-size: cover;
   display: flex;
@@ -206,7 +206,7 @@ h2 {
   margin-bottom: 208px;
 }
 .rebate-types-container {
-  background: url('~/assets/gridsavvy/Mendocino/images/background-lines.png')
+  background: url('~/assets/images/background-lines.png')
     no-repeat center center;
   background-size: cover;
   padding: 0 16px;

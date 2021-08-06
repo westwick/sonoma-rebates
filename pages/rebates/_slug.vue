@@ -30,7 +30,7 @@
               <img
                 class="mx-auto mt-1 md:mt-8"
                 :src="
-                  require(`~/assets/gridsavvy/Mendocino/images/${page.image}`)
+                  require(`~/assets/images/${page.image}`)
                 "
               />
             </div>
@@ -81,7 +81,7 @@
           <h1>Qualifications</h1>
           <h2>Please be ready to provide the following information:</h2>
           <p v-for="qual in page.qualifications" :key="qual">
-            <img src="~/assets/gridsavvy/Mendocino/images/checkbox-icon.svg" />
+            <img src="~/assets/images/checkbox-icon.svg" />
             {{ qual }}
           </p>
         </div>
@@ -158,7 +158,7 @@ export default {
 </script>
 
 <style>
-@import url('~/assets/gridsavvy/Mendocino/css/tabs.css');
+@import url('~/assets/css/tabs.css');
 .tabs-group {
   margin-bottom: 48px;
 }
@@ -172,7 +172,7 @@ export default {
   margin: 0 auto;
 }
 .product-hero-img {
-  background: url('~/assets/gridsavvy/Mendocino/images/product-hero.jpg')
+  background: url('~/assets/images/product-hero.jpg')
     no-repeat 40% center;
   background-size: cover;
 }

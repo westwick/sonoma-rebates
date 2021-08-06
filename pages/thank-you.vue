@@ -41,7 +41,7 @@ export default {}
 </script>
 
 <style>
-@import url('~/assets/gridsavvy/Mendocino/css/tabs.css');
+@import url('~/assets/css/tabs.css');
 .thanks {
   min-height: 50vh;
 }
@@ -60,7 +60,7 @@ export default {}
   padding-left: 48px;
 }
 .product-hero-img {
-  background: url('~/assets/gridsavvy/Mendocino/images/product-hero.jpg')
+  background: url('~/assets/images/product-hero.jpg')
     no-repeat top center;
 }
 .text-rebates {

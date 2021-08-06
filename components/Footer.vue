@@ -4,7 +4,7 @@
       <div class="footer text-center lg:text-left">
         <div class="footer-logo">
           <img
-            src="~/assets/gridsavvy/Mendocino/images/logo.svg"
+            src="~/assets/images/logo.svg"
             class="mx-auto lg:mx-0"
           />
         </div>
