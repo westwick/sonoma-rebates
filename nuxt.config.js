@@ -43,10 +43,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    publicPath: 'https://clearesult.com/gridsavvy/Mendocino/',
   },
 
   router: {
-    base: '/gridsavvy/Mendocino/',
   },
 }
