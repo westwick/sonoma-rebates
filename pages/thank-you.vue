@@ -18,8 +18,8 @@
             <div class="product-info thanks col-span-3 bg-white p-14 pr-20">
               <h2>Your application has been submitted</h2>
               <p class="text-lg mb-8">
-                You will receive an email confirming the submission of your
-                rebate application.
+                Our program team will reach out if we need additional
+                information.
               </p>
               <NuxtLink to="/" class="button-cta">Return Home</NuxtLink>
             </div>
