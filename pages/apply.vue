@@ -313,6 +313,7 @@
                             >
                             <FormsUploadButton
                               v-model="$v.documents.electricalPanel.$model"
+                              :uploadPath="account.pgeAccountNum"
                             />
                           </div>
                         </div>
@@ -324,6 +325,7 @@
 
                             <FormsUploadButton
                               v-model="$v.documents.electricalPanelNew.$model"
+                              :uploadPath="account.pgeAccountNum"
                             />
                           </div>
                         </div>
@@ -339,6 +341,7 @@
                               v-model="
                                 $v.documents.electricalPanelInvoice.$model
                               "
+                              :uploadPath="account.pgeAccountNum"
                             />
                           </div>
                         </div>
@@ -353,6 +356,7 @@
                               v-model="
                                 $v.documents.electrificationInvoice.$model
                               "
+                              :uploadPath="account.pgeAccountNum"
                             />
                           </div>
                         </div>
@@ -366,6 +370,7 @@
                             >
                             <FormsUploadButton
                               v-model="$v.documents.cappedGasLines.$model"
+                              :uploadPath="account.pgeAccountNum"
                             />
                           </div>
                         </div>
@@ -378,6 +383,7 @@
 
                             <FormsUploadButton
                               v-model="$v.documents.itemizedInvoice.$model"
+                              :uploadPath="account.pgeAccountNum"
                             />
                           </div>
                         </div>
@@ -390,6 +396,7 @@
                             >
                             <FormsUploadButton
                               v-model="$v.documents.applicationForm.$model"
+                              :uploadPath="account.pgeAccountNum"
                             />
                           </div>
                         </div>
@@ -402,6 +409,7 @@
 
                             <FormsUploadButton
                               v-model="$v.documents.w9.$model"
+                              :uploadPath="account.pgeAccountNum"
                             />
                           </div>
                         </div>
@@ -415,6 +423,7 @@
                             >
                             <FormsUploadButton
                               v-model="$v.documents.pgeBill.$model"
+                              :uploadPath="account.pgeAccountNum"
                             />
                           </div>
                         </div>

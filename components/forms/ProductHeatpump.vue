@@ -470,6 +470,7 @@
           >
           <FormsUploadButton
             v-model="validator.heatpump.proofOfPermitClosure.$model"
+            :uploadPath="validator.account.pgeAccountNum.$model"
           />
         </div>
         <div
@@ -491,7 +492,10 @@
         >
           <label class="form__label">CAS sheet<span class="r">*</span></label>
 
-          <FormsUploadButton v-model="validator.heatpump.casSheet.$model" />
+          <FormsUploadButton
+            v-model="validator.heatpump.casSheet.$model"
+            :uploadPath="validator.account.pgeAccountNum.$model"
+          />
         </div>
         <div
           class="error"
@@ -515,7 +519,10 @@
           <label class="form__label"
             >Photo of Existing Equipment<span class="r">*</span></label
           >
-          <FormsUploadButton v-model="validator.heatpump.photoOld.$model" />
+          <FormsUploadButton
+            v-model="validator.heatpump.photoOld.$model"
+            :uploadPath="validator.account.pgeAccountNum.$model"
+          />
         </div>
         <div
           class="error"
@@ -538,7 +545,10 @@
             >Photo of New Equipment<span class="r">*</span></label
           >
 
-          <FormsUploadButton v-model="validator.heatpump.photoNew.$model" />
+          <FormsUploadButton
+            v-model="validator.heatpump.photoNew.$model"
+            :uploadPath="validator.account.pgeAccountNum.$model"
+          />
         </div>
         <div
           class="error"

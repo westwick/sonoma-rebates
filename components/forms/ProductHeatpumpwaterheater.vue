@@ -328,6 +328,7 @@
           >
           <FormsUploadButton
             v-model="validator.heatpumpwaterheater.proofOfMixingValue.$model"
+            :uploadPath="validator.account.pgeAccountNum.$model"
           />
         </div>
         <div
@@ -351,6 +352,7 @@
 
           <FormsUploadButton
             v-model="validator.heatpumpwaterheater.casSheet.$model"
+            :uploadPath="validator.account.pgeAccountNum.$model"
           />
         </div>
         <div
@@ -377,6 +379,7 @@
           >
           <FormsUploadButton
             v-model="validator.heatpumpwaterheater.photoOld.$model"
+            :uploadPath="validator.account.pgeAccountNum.$model"
           />
         </div>
         <div
@@ -402,6 +405,7 @@
 
           <FormsUploadButton
             v-model="validator.heatpumpwaterheater.photoNew.$model"
+            :uploadPath="validator.account.pgeAccountNum.$model"
           />
         </div>
         <div

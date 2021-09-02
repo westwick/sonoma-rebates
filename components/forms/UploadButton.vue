@@ -17,7 +17,7 @@
 import Robodog from '@uppy/robodog'
 
 export default {
-  props: ['value'],
+  props: ['value', 'uploadPath'],
   computed: {
     inputVal: {
       get() {
@@ -47,7 +47,7 @@ export default {
           auth: { key: '5314f85b82984dce8d0194ac88be17e3' },
           template_id: '4a6598acae9342228925ffbbc7f6b243',
           fields: {
-            path: 'test',
+            path: this.uploadPath || 'noaccountnum',
           },
         },
       })
