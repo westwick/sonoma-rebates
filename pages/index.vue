@@ -6,7 +6,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="cta">
               <h1 class="text-2xl md:text-3xl lg:text-4xl">
-                Rebates for home energy improvements
+                Rebates for Mendocino County customers and propane customers
               </h1>
               <p>
                 A brighter future starts at home. Earn rebates for

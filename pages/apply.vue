@@ -672,9 +672,9 @@ export default {
         newPumpType: this.heatpumpSelected ? { required } : {},
         newPumpSize: this.heatpumpSelected ? { required } : {},
         proofOfPermitClosure: this.heatpumpSelected ? { required } : {},
-        casSheet: this.heatpumpSelected ? { required } : {},
-        photoOld: this.heatpumpSelected ? { required } : {},
-        photoNew: this.heatpumpSelected ? { required } : {},
+        casSheet: {},
+        photoOld: {},
+        photoNew: {},
       },
       heatpumpwaterheater: {
         dateInstalled: this.heatpumpwaterheaterSelected ? { required } : {},
@@ -698,9 +698,9 @@ export default {
         proofOfMixingValue: this.heatpumpwaterheaterSelected
           ? { required }
           : {},
-        casSheet: this.heatpumpwaterheaterSelected ? { required } : {},
-        photoOld: this.heatpumpwaterheaterSelected ? { required } : {},
-        photoNew: this.heatpumpwaterheaterSelected ? { required } : {},
+        casSheet: {},
+        photoOld: {},
+        photoNew: {},
       },
       inductioncooktop: {
         dateInstalled: this.inductioncooktopSelected ? { required } : {},
