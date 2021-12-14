@@ -348,7 +348,7 @@
             'form-group--error': validator.heatpumpwaterheater.casSheet.$error,
           }"
         >
-          <label class="form__label">CAS sheet<span class="r">*</span></label>
+          <label class="form__label">CAS sheet</label>
 
           <FormsUploadButton
             v-model="validator.heatpumpwaterheater.casSheet.$model"
@@ -375,7 +375,7 @@
           }"
         >
           <label class="form__label"
-            >Photo of Existing Equipment<span class="r">*</span></label
+            >Photo of Existing Equipment</label
           >
           <FormsUploadButton
             v-model="validator.heatpumpwaterheater.photoOld.$model"
@@ -400,7 +400,7 @@
           }"
         >
           <label class="form__label"
-            >Photo of New Equipment<span class="r">*</span></label
+            >Photo of New Equipment</label
           >
 
           <FormsUploadButton

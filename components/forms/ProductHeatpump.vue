@@ -490,7 +490,7 @@
             'form-group--error': validator.heatpump.casSheet.$error,
           }"
         >
-          <label class="form__label">CAS sheet<span class="r">*</span></label>
+          <label class="form__label">CAS sheet</label>
 
           <FormsUploadButton
             v-model="validator.heatpump.casSheet.$model"
@@ -516,8 +516,7 @@
             'form-group--error': validator.heatpump.photoOld.$error,
           }"
         >
-          <label class="form__label"
-            >Photo of Existing Equipment<span class="r">*</span></label
+          <label class="form__label">Photo of Existing Equipment</label
           >
           <FormsUploadButton
             v-model="validator.heatpump.photoOld.$model"
@@ -542,7 +541,7 @@
           }"
         >
           <label class="form__label"
-            >Photo of New Equipment<span class="r">*</span></label
+            >Photo of New Equipment</label
           >
 
           <FormsUploadButton
