@@ -6,20 +6,27 @@
           <img src="~/assets/images/logo.svg" class="mx-auto lg:mx-0" />
         </div>
         <div class="footer-support">
-          <p>Support@bayren.org</p>
+          <p>scprebates@clearesult.com</p>
           <p>1 (866) 878-6008</p>
         </div>
         <div class="footer-contact">
           <p>431 E Street</p>
           <p>Santa Rosa, CA 95404</p>
+          
+        <div class="cr-logo">
+            <img src="~/assets/images/CLEAResult_Powered_By-Black.png" class="mx-auto lg:mx-0"/>
+        </div>
+    
           <p class="footer-email">
             <a href="mailto:info@sonomacleanpower.org" class="link"
               >info@sonomacleanpower.org</a
             >
+            
           </p>
         </div>
       </div>
     </div>
+    
     <div class="footer-banner">
       <div
         class="
@@ -32,7 +39,7 @@
         "
       >
         <p class="text-sm text-center md:text-left md:text-lg block w-full">
-          © 2021 Sonoma Clean Power Authority
+          © 2022 Sonoma Clean Power Authority
         </p>
         <div class="footer-social hidden md:block md:w-full text-right">
           <a href="https://www.facebook.com/SonomaCleanPower/" target="_blank"
@@ -87,5 +94,11 @@ export default {}
 }
 .footer-social {
   font-size: 24px;
+}
+.cr-logo{
+    float:right;
+}
+.cr-logo img{
+    width:150px;
 }
 </style>

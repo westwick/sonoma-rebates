@@ -132,10 +132,11 @@ h2 {
 .info-1,
 .info-2 {
   padding: 64px;
+  margin-top:110px;
 }
 .info-1 {
   background: #fff;
-  box-shadow: 0px -20px 40px #79aac429;
+  box-shadow: 0px 0px 40px #79aac429;
 }
 .info-1 h2 {
   color: #382658;
